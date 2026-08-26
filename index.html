@@ -1064,59 +1064,132 @@
            PDF generation process in the next stage.
         ===================================================== */
 
-        function generateDirectory() {
-
+        async function generateDirectory() {
 
             const button =
                 document.getElementById(
                     'generateButton'
                 );
-
-
+        
             const status =
                 document.getElementById(
                     'status'
                 );
-
-
-            button.disabled =
-                true;
-
-
+        
+        
+            button.disabled = true;
+        
             button.textContent =
-                'Preparing...';
-
-
-
+                'Starting PDF Generation...';
+        
+        
             status.textContent =
+                'Starting the GOS Member Directory PDF generation process...';
+        
+        
+            try {
+        
+                const response =
+                    await fetch(
+                        API_URL +
+                        '?action=start'
+                    );
+        
+        
+                if (!response.ok) {
+        
+                    throw new Error(
+                        'Unable to contact the PDF generator.'
+                    );
+        
+                }
+        
+        
+                const data =
+                    await response.json();
+        
+        
+                if (!data.success) {
+        
+                    throw new Error(
+                        data.error ||
+                        'PDF generation could not be started.'
+                    );
+        
+            }
 
-                'The Generate button will be connected to the existing GOS PDF generator in the next step.';
+
+        /*
+         * The Apps Script has successfully started
+         * startMemberDirectory().
+         */
+        status.textContent =
+            'PDF generation started successfully. ' +
+            'The PDF parts are now being generated.';
 
 
-
-            setTimeout(
-                function() {
-
-
-                    button.disabled =
-                        false;
+        button.textContent =
+            'Generation Started';
 
 
-                    button.textContent =
-                        'Generate Member Directory';
+        /*
+         * Wait a few seconds and refresh the
+         * list of available PDFs.
+         */
+        setTimeout(
+            async function() {
+
+                await loadPDFs();
+
+            },
+            5000
+        );
 
 
-                    status.textContent =
+        /*
+         * Keep the button disabled for now so
+         * the user cannot accidentally start the
+         * complete generation process twice.
+         */
+        setTimeout(
+            function() {
 
-                        'Website and PDF download system are connected. PDF generation connection is next.';
+                button.disabled =
+                    false;
+
+                button.textContent =
+                    'Generate Member Directory';
+
+            },
+            10000
+        );
 
 
-                },
-                1500
-            );
+    }
 
-        }
+    catch (error) {
 
+
+        console.error(
+            error
+        );
+
+
+        status.textContent =
+            'Unable to start PDF generation: ' +
+            error.message;
+
+
+        button.disabled =
+            false;
+
+
+        button.textContent =
+            'Generate Member Directory';
+
+    }
+
+}
 
 
         /* =====================================================
