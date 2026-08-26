@@ -3,566 +3,506 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <!-- =====================================================
-         BROWSER TITLE
-    ====================================================== -->
+<title>
+Gandhinagar Odiya Samaj - Member Directory
+</title>
 
-    <title>
-        Gandhinagar Odiya Samaj - Member Directory
-    </title>
+<link rel="icon"
+      type="image/png"
+      href="GOS%20Logo.png">
 
 
-    <!-- =====================================================
-         WEBSITE FAVICON / TITLE BAR LOGO
-    ====================================================== -->
+<style>
 
-    <link
-        rel="icon"
-        type="image/png"
-        href="GOS%20Logo.png"
-    >
+* {
+    box-sizing: border-box;
+}
 
 
-    <link
-        rel="shortcut icon"
-        type="image/png"
-        href="GOS%20Logo.png"
-    >
+body {
 
+    margin: 0;
 
-    <!-- =====================================================
-         STYLES
-    ====================================================== -->
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-    <style>
+    background: #f5f7fa;
 
-        * {
-            box-sizing: border-box;
-        }
+    color: #222;
+}
 
 
-        body {
+/* ============================================================
+   HEADER
+   ============================================================ */
 
-            margin: 0;
+.header {
 
-            font-family:
-                Arial,
-                Helvetica,
-                sans-serif;
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff,
+            #f0f4f8
+        );
 
-            background: #f5f7fa;
+    padding: 35px 20px;
 
-            color: #222;
+    text-align: center;
 
-        }
+    border-bottom:
+        1px solid #ddd;
+}
 
 
-        /* =================================================
-           HEADER
-        ================================================= */
+.logo {
 
-        .header {
+    width: 120px;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #ffffff,
-                    #f0f4f8
-                );
+    height: 120px;
 
-            padding:
-                35px 20px;
+    object-fit: contain;
 
-            text-align: center;
+    margin:
+        0 auto 15px auto;
 
-            border-bottom:
-                1px solid #ddd;
+    display: block;
+}
 
-        }
 
+.samaj-name {
 
-        .main-logo {
+    margin: 0;
 
-            width: 130px;
+    font-size: 32px;
 
-            height: 130px;
+    font-weight: 800;
 
-            object-fit: contain;
+    letter-spacing: 1px;
 
-            display: block;
+    color: #1d3557;
+}
 
-            margin:
-                0 auto 15px auto;
 
-        }
+.subtitle {
 
+    margin-top: 8px;
 
-        .samaj-name {
+    font-size: 17px;
 
-            margin: 0;
+    color: #666;
+}
 
-            font-size: 32px;
 
-            font-weight: 800;
+/* ============================================================
+   CONTAINER
+   ============================================================ */
 
-            letter-spacing: 1px;
+.container {
 
-            color: #1d3557;
+    max-width: 1100px;
 
-        }
+    margin: 35px auto;
 
+    padding: 0 20px;
+}
 
-        .subtitle {
 
-            margin-top: 8px;
+/* ============================================================
+   STATISTICS
+   ============================================================ */
 
-            font-size: 17px;
+.stats {
 
-            color: #666;
+    display: grid;
 
-        }
+    grid-template-columns:
+        repeat(3, 1fr);
 
+    gap: 20px;
 
-        /* =================================================
-           MAIN CONTAINER
-        ================================================= */
+    margin-bottom: 30px;
+}
 
-        .container {
 
-            max-width: 1100px;
+.stat-card {
 
-            margin:
-                35px auto;
+    background: white;
 
-            padding:
-                0 20px;
+    border-radius: 12px;
 
-        }
+    padding: 25px;
 
+    text-align: center;
 
-        /* =================================================
-           STATISTICS
-        ================================================= */
+    box-shadow:
+        0 3px 12px
+        rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+}
 
-        .stats {
 
-            display: grid;
+.stat-number {
 
-            grid-template-columns:
-                repeat(3, 1fr);
+    font-size: 34px;
 
-            gap: 20px;
+    font-weight: 700;
 
-            margin-bottom: 30px;
+    color: #1d3557;
+}
 
-        }
 
+.stat-label {
 
-        .stat-card {
+    margin-top: 7px;
 
-            background: white;
+    color: #777;
 
-            border-radius: 12px;
+    font-size: 14px;
+}
 
-            padding: 25px;
 
-            text-align: center;
+/* ============================================================
+   GENERATE CARD
+   ============================================================ */
 
-            box-shadow:
-                0 3px 12px
-                rgba(
-                    0,
-                    0,
-                    0,
-                    0.08
-                );
+.generate-card {
 
-        }
+    background: white;
 
+    border-radius: 12px;
 
-        .stat-number {
+    padding: 30px;
 
-            font-size: 34px;
+    text-align: center;
 
-            font-weight: 700;
+    box-shadow:
+        0 3px 12px
+        rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
 
-            color: #1d3557;
+    margin-bottom: 30px;
+}
 
-        }
 
+.generate-card h2 {
 
-        .stat-label {
+    margin-top: 0;
 
-            margin-top: 7px;
+    color: #1d3557;
+}
 
-            color: #777;
 
-            font-size: 14px;
+.generate-card p {
 
-        }
+    color: #666;
 
+    line-height: 1.6;
+}
 
-        /* =================================================
-           GENERATE CARD
-        ================================================= */
 
-        .generate-card {
+.generate-button {
 
-            background: white;
+    border: none;
 
-            border-radius: 12px;
+    border-radius: 8px;
 
-            padding: 30px;
+    padding:
+        14px 30px;
 
-            text-align: center;
+    font-size: 16px;
 
-            box-shadow:
-                0 3px 12px
-                rgba(
-                    0,
-                    0,
-                    0,
-                    0.08
-                );
+    font-weight: 700;
 
-            margin-bottom: 30px;
+    cursor: pointer;
 
-        }
+    background: #1d3557;
 
+    color: white;
 
-        .generate-card h2 {
+    transition: 0.2s;
+}
 
-            margin-top: 0;
 
-            color: #1d3557;
+.generate-button:hover {
 
-        }
+    background: #274c77;
 
+    transform:
+        translateY(-1px);
+}
 
-        .generate-card p {
 
-            color: #666;
+.generate-button:disabled {
 
-            line-height: 1.6;
+    background: #999;
 
-        }
+    cursor: not-allowed;
 
+    transform: none;
+}
 
-        .generate-button {
 
-            border: none;
+/* ============================================================
+   STATUS
+   ============================================================ */
 
-            border-radius: 8px;
+.status {
 
-            padding:
-                14px 30px;
+    margin-top: 20px;
 
-            font-size: 16px;
+    padding: 14px;
 
-            font-weight: 700;
+    border-radius: 8px;
 
-            cursor: pointer;
+    background: #f1f5f9;
 
-            background: #1d3557;
+    color: #555;
 
-            color: white;
+    font-size: 14px;
 
-            transition: 0.2s;
+    line-height: 1.6;
+}
 
-        }
 
+/* ============================================================
+   PDF SECTION
+   ============================================================ */
 
-        .generate-button:hover {
+.pdf-section {
 
-            background: #274c77;
+    background: white;
 
-            transform:
-                translateY(-1px);
+    border-radius: 12px;
 
-        }
+    padding: 30px;
 
+    box-shadow:
+        0 3px 12px
+        rgba(
+            0,
+            0,
+            0,
+            0.08
+        );
+}
 
-        .generate-button:disabled {
 
-            background: #999;
+.pdf-section h2 {
 
-            cursor:
-                not-allowed;
+    margin-top: 0;
 
-            transform: none;
+    color: #1d3557;
+}
 
-        }
 
+.pdf-list {
 
-        /* =================================================
-           STATUS
-        ================================================= */
+    display: flex;
 
-        .status {
+    flex-direction: column;
 
-            margin-top: 20px;
+    gap: 12px;
+}
 
-            padding: 14px;
 
-            border-radius: 8px;
+.pdf-item {
 
-            background: #f1f5f9;
+    display: flex;
 
-            color: #555;
+    justify-content:
+        space-between;
 
-            font-size: 14px;
+    align-items: center;
 
-            line-height: 1.5;
+    padding: 16px;
 
-        }
+    border:
+        1px solid #e1e5ea;
 
+    border-radius: 8px;
 
-        /* =================================================
-           PDF SECTION
-        ================================================= */
+    background: #fafbfc;
+}
 
-        .pdf-section {
 
-            background: white;
+.pdf-name {
 
-            border-radius: 12px;
+    font-weight: 600;
+}
 
-            padding: 30px;
 
-            box-shadow:
-                0 3px 12px
-                rgba(
-                    0,
-                    0,
-                    0,
-                    0.08
-                );
+.pdf-info {
 
-        }
+    font-size: 13px;
 
+    color: #777;
 
-        .pdf-section h2 {
+    margin-top: 4px;
+}
 
-            margin-top: 0;
 
-            color: #1d3557;
+.pdf-buttons {
 
-        }
+    display: flex;
 
+    gap: 8px;
+}
 
-        .pdf-list {
 
-            display: flex;
+.download-button {
 
-            flex-direction: column;
+    text-decoration: none;
 
-            gap: 12px;
+    background: #457b9d;
 
-        }
+    color: white;
 
+    padding:
+        9px 18px;
 
-        .pdf-item {
+    border-radius: 6px;
 
-            display: flex;
+    font-size: 14px;
 
-            justify-content:
-                space-between;
+    font-weight: 600;
 
-            align-items: center;
+    display: inline-block;
+}
 
-            padding: 16px;
 
-            border:
-                1px solid #e1e5ea;
+.download-button:hover {
 
-            border-radius: 8px;
+    background: #35627d;
+}
 
-            background: #fafbfc;
 
-        }
+/* ============================================================
+   LOADING / ERROR
+   ============================================================ */
 
+.loading {
 
-        .pdf-name {
+    text-align: center;
 
-            font-weight: 600;
+    padding: 25px;
 
-            color: #222;
+    color: #777;
+}
 
-        }
 
+.empty {
 
-        .pdf-info {
+    text-align: center;
 
-            font-size: 13px;
+    padding: 25px;
 
-            color: #777;
+    color: #777;
+}
 
-            margin-top: 4px;
 
-        }
+.error {
 
+    text-align: center;
 
-        .download-button {
+    padding: 25px;
 
-            text-decoration: none;
+    color: #b42318;
 
-            background: #457b9d;
+    background: #fff1f0;
 
-            color: white;
+    border-radius: 8px;
+}
 
-            padding:
-                9px 18px;
 
-            border-radius: 6px;
+/* ============================================================
+   FOOTER
+   ============================================================ */
 
-            font-size: 14px;
+footer {
 
-            font-weight: 600;
+    text-align: center;
 
-            display: inline-block;
+    padding:
+        30px 20px;
 
-        }
+    color: #777;
 
+    font-size: 13px;
+}
 
-        .download-button:hover {
 
-            background: #35627d;
+/* ============================================================
+   MOBILE
+   ============================================================ */
 
-        }
+@media (
+    max-width: 700px
+) {
 
+    .stats {
 
-        /* =================================================
-           LOADING
-        ================================================= */
+        grid-template-columns:
+            1fr;
+    }
 
-        .loading {
 
-            text-align: center;
+    .samaj-name {
 
-            padding: 25px;
+        font-size: 24px;
+    }
 
-            color: #777;
 
-        }
+    .logo {
 
+        width: 100px;
 
-        /* =================================================
-           EMPTY
-        ================================================= */
+        height: 100px;
+    }
 
-        .empty {
 
-            text-align: center;
+    .pdf-item {
 
-            padding: 25px;
+        flex-direction:
+            column;
 
-            color: #777;
+        align-items:
+            flex-start;
 
-        }
+        gap: 12px;
+    }
 
 
-        /* =================================================
-           ERROR
-        ================================================= */
+    .pdf-buttons {
 
-        .error {
+        width: 100%;
+    }
 
-            text-align: center;
 
-            padding: 25px;
+    .download-button {
 
-            color: #b42318;
+        flex: 1;
 
-            background: #fff1f0;
+        text-align: center;
+    }
 
-            border-radius: 8px;
+}
 
-            line-height: 1.6;
-
-        }
-
-
-        /* =================================================
-           FOOTER
-        ================================================= */
-
-        footer {
-
-            text-align: center;
-
-            padding:
-                30px 20px;
-
-            color: #777;
-
-            font-size: 13px;
-
-        }
-
-
-        /* =================================================
-           MOBILE
-        ================================================= */
-
-        @media (
-            max-width: 700px
-        ) {
-
-            .stats {
-
-                grid-template-columns:
-                    1fr;
-
-            }
-
-
-            .samaj-name {
-
-                font-size: 24px;
-
-            }
-
-
-            .main-logo {
-
-                width: 110px;
-
-                height: 110px;
-
-            }
-
-
-            .pdf-item {
-
-                flex-direction:
-                    column;
-
-                align-items:
-                    flex-start;
-
-                gap: 12px;
-
-            }
-
-
-            .download-button {
-
-                width: 100%;
-
-                text-align: center;
-
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
@@ -570,1082 +510,736 @@
 <body>
 
 
-    <!-- =====================================================
-         HEADER
-    ====================================================== -->
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
 
-    <header class="header">
+<header class="header">
+
+    <img
+        src="GOS%20Logo.png"
+        alt="Gandhinagar Odiya Samaj Logo"
+        class="logo"
+    >
+
+    <h1 class="samaj-name">
+        GANDHINAGAR ODIYA SAMAJ
+    </h1>
+
+    <div class="subtitle">
+        Member Directory
+    </div>
+
+</header>
 
 
-        <!-- MAIN LOGO -->
+<!-- ============================================================
+     MAIN
+     ============================================================ -->
 
-        <img
-            src="GOS%20Logo.png"
-            alt="Gandhinagar Odiya Samaj Logo"
-            class="main-logo"
-        >
+<main class="container">
 
 
-        <h1 class="samaj-name">
+    <!-- ========================================================
+         STATISTICS
+         ======================================================== -->
 
-            GANDHINAGAR ODIYA SAMAJ
-
-        </h1>
+    <section class="stats">
 
 
-        <div class="subtitle">
+        <div class="stat-card">
 
-            Member Directory
+            <div
+                class="stat-number"
+                id="memberCount"
+            >
+                —
+            </div>
+
+            <div class="stat-label">
+                Total Members
+            </div>
 
         </div>
 
 
-    </header>
-
-
-    <!-- =====================================================
-         MAIN
-    ====================================================== -->
-
-    <main class="container">
-
-
-        <!-- =================================================
-             STATISTICS
-        ================================================== -->
-
-        <section class="stats">
-
-
-            <div class="stat-card">
-
-                <div
-                    class="stat-number"
-                    id="memberCount"
-                >
-                    0
-                </div>
-
-                <div class="stat-label">
-
-                    Total Members
-
-                </div>
-
-            </div>
-
-
-            <div class="stat-card">
-
-                <div
-                    class="stat-number"
-                    id="partCount"
-                >
-                    0
-                </div>
-
-                <div class="stat-label">
-
-                    PDF Parts
-
-                </div>
-
-            </div>
-
-
-            <div class="stat-card">
-
-                <div
-                    class="stat-number"
-                    id="statusNumber"
-                >
-                    Connecting...
-                </div>
-
-                <div class="stat-label">
-
-                    System Status
-
-                </div>
-
-            </div>
-
-
-        </section>
-
-
-        <!-- =================================================
-             GENERATE SECTION
-        ================================================== -->
-
-        <section class="generate-card">
-
-
-            <h2>
-
-                Member Directory
-
-            </h2>
-
-
-            <p>
-
-                Generate the latest member directory
-                PDFs from the Gandhinagar Odiya Samaj
-                member database.
-
-            </p>
-
-
-            <button
-                class="generate-button"
-                id="generateButton"
-                onclick="generateDirectory()"
-            >
-
-                Generate Member Directory
-
-            </button>
-
+        <div class="stat-card">
 
             <div
-                class="status"
-                id="status"
+                class="stat-number"
+                id="partCount"
             >
-
-                Connecting to GOS Member Database...
-
+                —
             </div>
 
+            <div class="stat-label">
+                PDF Parts
+            </div>
 
-        </section>
-
-
-        <!-- =================================================
-             PDF SECTION
-        ================================================== -->
-
-        <section class="pdf-section">
+        </div>
 
 
-            <h2>
-
-                Generated PDFs
-
-            </h2>
-
+        <div class="stat-card">
 
             <div
-                class="pdf-list"
-                id="pdfList"
+                class="stat-number"
+                id="statusNumber"
             >
-
-                <div class="loading">
-
-                    Loading generated PDFs...
-
-                </div>
-
+                Connecting...
             </div>
 
+            <div class="stat-label">
+                System Status
+            </div>
 
-        </section>
+        </div>
 
+    </section>
 
-    </main>
 
+    <!-- ========================================================
+         GENERATE
+         ======================================================== -->
 
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
+    <section class="generate-card">
 
-    <footer>
+        <h2>
+            Member Directory
+        </h2>
 
-        © Gandhinagar Odiya Samaj
+        <p>
+            Generate the latest member directory PDFs
+            from the Gandhinagar Odiya Samaj member database.
+        </p>
 
-    </footer>
+        <button
+            class="generate-button"
+            id="generateButton"
+            onclick="generateDirectory()"
+        >
+            Generate Member Directory
+        </button>
 
+        <div
+            class="status"
+            id="status"
+        >
+            Connecting to GOS Member Database...
+        </div>
 
-    <!-- =====================================================
-         WEBSITE JAVASCRIPT
-    ====================================================== -->
+    </section>
 
-    <script>
 
+    <!-- ========================================================
+         GENERATED PDFs
+         ======================================================== -->
 
-        /* =================================================
-           GOOGLE APPS SCRIPT WEB APP URL
-        ================================================= */
+    <section class="pdf-section">
 
-        const API_URL =
-            'https://script.google.com/macros/s/AKfycbxfBTSYv8eqycerwFCn0m7GQ02fqzHx0CPg8iri8SCTzaqOxNjmX83aZCgf4Czn1Fxt/exec';
+        <h2>
+            Generated PDFs
+        </h2>
 
+        <div
+            class="pdf-list"
+            id="pdfList"
+        >
 
-        /* =================================================
-           LOAD DIRECTORY STATUS
-        ================================================= */
+            <div class="loading">
+                Loading generated PDFs...
+            </div>
 
-        async function loadDirectoryStatus() {
+        </div>
 
-            const status =
-                document.getElementById(
-                    'status'
-                );
+    </section>
 
+</main>
 
-            const statusNumber =
-                document.getElementById(
-                    'statusNumber'
-                );
 
+<footer>
 
-            try {
+    © Gandhinagar Odiya Samaj
 
-                status.textContent =
-                    'Connecting to GOS Member Database...';
+</footer>
 
 
-                statusNumber.textContent =
-                    'Connecting...';
+<script>
 
+/* ============================================================
+   GOOGLE APPS SCRIPT URL
+   ============================================================ */
 
-                const response =
-                    await fetch(
-                        API_URL +
-                        '?action=status&cache=' +
-                        Date.now()
-                    );
+const API_URL =
+    'https://script.google.com/macros/s/AKfycbxfBTSYv8eqycerwFCn0m7GQ02fqzHx0CPg8iri8SCTzaqOxNjmX83aZCgf4Czn1Fxt/exec';
 
 
-                if (!response.ok) {
+/* ============================================================
+   LOAD STATUS
+   ============================================================ */
 
-                    throw new Error(
-                        'Unable to connect. HTTP ' +
-                        response.status
-                    );
+async function loadDirectoryStatus() {
 
-                }
+    const status =
+        document.getElementById('status');
 
+    try {
 
-                const responseText =
-                    await response.text();
+        status.textContent =
+            'Connecting to GOS Member Database...';
 
-
-                console.log(
-                    'STATUS RESPONSE:',
-                    responseText
-                );
-
-
-                let data;
-
-
-                try {
-
-                    data =
-                        JSON.parse(
-                            responseText
-                        );
-
-                }
-
-                catch (error) {
-
-                    throw new Error(
-                        'Invalid response from Apps Script.'
-                    );
-
-                }
-
-
-                if (!data.success) {
-
-                    throw new Error(
-                        data.error ||
-                        'Unknown API error.'
-                    );
-
-                }
-
-
-                document.getElementById(
-                    'memberCount'
-                ).textContent =
-                    data.memberCount;
-
-
-                document.getElementById(
-                    'partCount'
-                ).textContent =
-                    data.partCount;
-
-
-                statusNumber.textContent =
-                    'Ready';
-
-
-                status.innerHTML =
-
-                    '<strong>Connected successfully.</strong>' +
-                    '<br><br>' +
-
-                    data.memberCount +
-                    ' members found.<br>' +
-
-                    data.partCount +
-                    ' PDF parts required.';
-
-            }
-
-            catch (error) {
-
-                console.error(
-                    'STATUS ERROR:',
-                    error
-                );
-
-
-                statusNumber.textContent =
-                    'Offline';
-
-
-                status.innerHTML =
-
-                    '<strong>Unable to connect to the GOS database.</strong>' +
-                    '<br><br>' +
-
-                    error.message;
-
-            }
-
+        const response =
+            await fetch(
+                API_URL +
+                '?action=status&ts=' +
+                Date.now()
+            );
+
+        if (!response.ok) {
+
+            throw new Error(
+                'Unable to connect to Google Apps Script.'
+            );
         }
 
+        const data =
+            await response.json();
 
-        /* =================================================
-           LOAD PDF FILES
-        ================================================= */
+        if (!data.success) {
 
-        async function loadPDFs() {
+            throw new Error(
+                data.error ||
+                'Unknown API error.'
+            );
+        }
 
-            const pdfList =
-                document.getElementById(
-                    'pdfList'
-                );
+        document.getElementById(
+            'memberCount'
+        ).textContent =
+            data.memberCount;
 
+        document.getElementById(
+            'partCount'
+        ).textContent =
+            data.partCount;
+
+        document.getElementById(
+            'statusNumber'
+        ).textContent =
+            data.status === 'RUNNING'
+                ? 'Running'
+                : 'Ready';
+
+        status.textContent =
+
+            data.memberCount +
+            ' members found. ' +
+
+            data.partCount +
+            ' PDF parts required.';
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        document.getElementById(
+            'statusNumber'
+        ).textContent =
+            'Offline';
+
+        status.textContent =
+            'Unable to connect to the GOS database. ' +
+            error.message;
+    }
+}
+
+
+/* ============================================================
+   LOAD PDFs
+   ============================================================ */
+
+async function loadPDFs() {
+
+    const pdfList =
+        document.getElementById(
+            'pdfList'
+        );
+
+    pdfList.innerHTML =
+        '<div class="loading">' +
+        'Loading generated PDFs...' +
+        '</div>';
+
+    try {
+
+        const response =
+            await fetch(
+                API_URL +
+                '?action=pdfs&ts=' +
+                Date.now()
+            );
+
+        if (!response.ok) {
+
+            throw new Error(
+                'Unable to load PDF files.'
+            );
+        }
+
+        const data =
+            await response.json();
+
+        if (!data.success) {
+
+            throw new Error(
+                data.error ||
+                'Unable to load PDF files.'
+            );
+        }
+
+        pdfList.innerHTML = '';
+
+
+        if (
+            !data.files ||
+            data.files.length === 0
+        ) {
 
             pdfList.innerHTML =
-
-                '<div class="loading">' +
-                'Loading generated PDFs...' +
+                '<div class="empty">' +
+                'No PDF files have been generated yet.' +
                 '</div>';
 
-
-            try {
-
-                const response =
-                    await fetch(
-                        API_URL +
-                        '?action=pdfs&cache=' +
-                        Date.now()
-                    );
-
-
-                if (!response.ok) {
-
-                    throw new Error(
-                        'Unable to load PDF files. HTTP ' +
-                        response.status
-                    );
-
-                }
-
-
-                const responseText =
-                    await response.text();
-
-
-                console.log(
-                    'PDF RESPONSE:',
-                    responseText
-                );
-
-
-                let data;
-
-
-                try {
-
-                    data =
-                        JSON.parse(
-                            responseText
-                        );
-
-                }
-
-                catch (error) {
-
-                    throw new Error(
-                        'Apps Script returned invalid JSON.'
-                    );
-
-                }
-
-
-                if (!data.success) {
-
-                    throw new Error(
-                        data.error ||
-                        'Unable to load PDF files.'
-                    );
-
-                }
-
-
-                pdfList.innerHTML = '';
-
-
-                if (
-                    !data.files ||
-                    data.files.length === 0
-                ) {
-
-                    pdfList.innerHTML =
-
-                        '<div class="empty">' +
-
-                        'No PDF files have been generated yet.' +
-
-                        '</div>';
-
-                    return;
-
-                }
-
-
-                data.files.forEach(
-                    function(file) {
-
-                        const item =
-                            document.createElement(
-                                'div'
-                            );
-
-
-                        item.className =
-                            'pdf-item';
-
-
-                        const information =
-                            document.createElement(
-                                'div'
-                            );
-
-
-                        const name =
-                            document.createElement(
-                                'div'
-                            );
-
-
-                        name.className =
-                            'pdf-name';
-
-
-                        name.textContent =
-                            file.name;
-
-
-                        const info =
-                            document.createElement(
-                                'div'
-                            );
-
-
-                        info.className =
-                            'pdf-info';
-
-
-                        info.textContent =
-                            'Gandhinagar Odiya Samaj Member Directory';
-
-
-                        information.appendChild(
-                            name
-                        );
-
-
-                        information.appendChild(
-                            info
-                        );
-
-
-                        const download =
-                            document.createElement(
-                                'a'
-                            );
-
-
-                        download.className =
-                            'download-button';
-
-
-                        download.href =
-                            file.downloadUrl;
-
-
-                        download.target =
-                            '_blank';
-
-
-                        download.rel =
-                            'noopener noreferrer';
-
-
-                        download.textContent =
-                            'Download PDF';
-
-
-                        item.appendChild(
-                            information
-                        );
-
-
-                        item.appendChild(
-                            download
-                        );
-
-
-                        pdfList.appendChild(
-                            item
-                        );
-
-                    }
-                );
-
-            }
-
-            catch (error) {
-
-                console.error(
-                    'PDF ERROR:',
-                    error
-                );
-
-
-                pdfList.innerHTML =
-
-                    '<div class="error">' +
-
-                    '<strong>' +
-
-                    'Unable to load the generated PDFs.' +
-
-                    '</strong>' +
-
-                    '<br><br>' +
-
-                    error.message +
-
-                    '<br><br>' +
-
-                    'Please check the Apps Script deployment and PDF folder.' +
-
-                    '</div>';
-
-            }
-
+            return;
         }
 
 
-        /* =================================================
-           START PDF GENERATION
-        ================================================= */
+        data.files.forEach(
+            function(file) {
 
-        async function generateDirectory() {
+                const item =
+                    document.createElement(
+                        'div'
+                    );
 
-            const button =
-                document.getElementById(
-                    'generateButton'
+                item.className =
+                    'pdf-item';
+
+
+                const information =
+                    document.createElement(
+                        'div'
+                    );
+
+
+                const name =
+                    document.createElement(
+                        'div'
+                    );
+
+                name.className =
+                    'pdf-name';
+
+                name.textContent =
+                    file.name;
+
+
+                const info =
+                    document.createElement(
+                        'div'
+                    );
+
+                info.className =
+                    'pdf-info';
+
+                info.textContent =
+                    'Generated PDF';
+
+
+                information.appendChild(
+                    name
+                );
+
+                information.appendChild(
+                    info
                 );
 
 
-            const status =
-                document.getElementById(
-                    'status'
+                const buttons =
+                    document.createElement(
+                        'div'
+                    );
+
+                buttons.className =
+                    'pdf-buttons';
+
+
+                const download =
+                    document.createElement(
+                        'a'
+                    );
+
+                download.className =
+                    'download-button';
+
+                download.href =
+                    file.downloadUrl;
+
+                download.target =
+                    '_blank';
+
+                download.rel =
+                    'noopener noreferrer';
+
+                download.textContent =
+                    'Download';
+
+
+                buttons.appendChild(
+                    download
                 );
+
+
+                item.appendChild(
+                    information
+                );
+
+                item.appendChild(
+                    buttons
+                );
+
+
+                pdfList.appendChild(
+                    item
+                );
+
+            }
+        );
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        pdfList.innerHTML =
+
+            '<div class="error">' +
+
+            '<strong>Unable to load the generated PDFs.</strong>' +
+
+            '<br><br>' +
+
+            error.message +
+
+            '</div>';
+    }
+}
+
+
+/* ============================================================
+   START GENERATION
+   ============================================================ */
+
+async function generateDirectory() {
+
+    const button =
+        document.getElementById(
+            'generateButton'
+        );
+
+    const status =
+        document.getElementById(
+            'status'
+        );
+
+    button.disabled = true;
+
+    button.textContent =
+        'Starting...';
+
+    status.textContent =
+        'Starting PDF generation...';
+
+
+    try {
+
+        const response =
+            await fetch(
+                API_URL +
+                '?action=start&ts=' +
+                Date.now()
+            );
+
+        if (!response.ok) {
+
+            throw new Error(
+                'Unable to start PDF generation.'
+            );
+        }
+
+        const data =
+            await response.json();
+
+        if (!data.success) {
+
+            throw new Error(
+                data.error ||
+                'PDF generation failed to start.'
+            );
+        }
+
+
+        status.textContent =
+            'PDF generation started.';
+
+
+        button.textContent =
+            'Generating...';
+
+
+        monitorGenerationProgress();
+
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        status.textContent =
+            'Error: ' +
+            error.message;
+
+        button.disabled =
+            false;
+
+        button.textContent =
+            'Generate Member Directory';
+    }
+}
+
+
+/* ============================================================
+   MONITOR PROGRESS
+   ============================================================ */
+
+async function monitorGenerationProgress() {
+
+    const status =
+        document.getElementById(
+            'status'
+        );
+
+    const button =
+        document.getElementById(
+            'generateButton'
+        );
+
+    try {
+
+        const response =
+            await fetch(
+                API_URL +
+                '?action=progress&ts=' +
+                Date.now()
+            );
+
+        if (!response.ok) {
+
+            throw new Error(
+                'Unable to read generation progress.'
+            );
+        }
+
+        const data =
+            await response.json();
+
+        if (!data.success) {
+
+            throw new Error(
+                data.error ||
+                'Progress unavailable.'
+            );
+        }
+
+
+        /* ====================================================
+           RUNNING
+           ==================================================== */
+
+        if (
+            data.status ===
+            'RUNNING'
+        ) {
+
+            status.innerHTML =
+
+                '<strong>Generating Member Directory</strong><br><br>' +
+
+                'Part ' +
+                data.completedParts +
+                ' of ' +
+                data.totalParts +
+                ' completed<br>' +
+
+                'Currently processing Part ' +
+                data.currentPart +
+                '<br><br>' +
+
+                '<strong>' +
+                data.percentage +
+                '% complete</strong>';
 
 
             button.disabled =
                 true;
 
-
             button.textContent =
-                'Starting...';
+                'Generating...';
 
+
+            setTimeout(
+                monitorGenerationProgress,
+                5000
+            );
+
+            return;
+        }
+
+
+        /* ====================================================
+           COMPLETED
+           ==================================================== */
+
+        if (
+            data.status ===
+            'COMPLETED'
+        ) {
 
             status.innerHTML =
-                '<strong>Starting PDF generation...</strong>';
 
+                '<strong>✓ Generation Complete</strong><br><br>' +
 
-            try {
+                data.memberCount +
+                ' members processed<br>' +
 
-                const response =
-                    await fetch(
-                        API_URL +
-                        '?action=start&cache=' +
-                        Date.now()
-                    );
+                data.totalParts +
+                ' PDF parts generated<br><br>' +
 
+                '100% complete';
 
-                if (!response.ok) {
 
-                    throw new Error(
-                        'Unable to start PDF generation. HTTP ' +
-                        response.status
-                    );
+            button.disabled =
+                false;
 
-                }
-
-
-                const responseText =
-                    await response.text();
-
-
-                console.log(
-                    'START RESPONSE:',
-                    responseText
-                );
-
-
-                let data;
-
-
-                try {
-
-                    data =
-                        JSON.parse(
-                            responseText
-                        );
-
-                }
-
-                catch (error) {
-
-                    throw new Error(
-                        'Invalid response from Apps Script.'
-                    );
-
-                }
-
-
-                if (!data.success) {
-
-                    throw new Error(
-                        data.error ||
-                        'PDF generation failed to start.'
-                    );
-
-                }
-
-
-                status.innerHTML =
-
-                    '<strong>PDF generation started.</strong>' +
-                    '<br><br>' +
-
-                    'Please wait while the PDF parts are generated.';
-
-
-                button.textContent =
-                    'Generating...';
-
-
-                monitorGenerationProgress();
-
-            }
-
-            catch (error) {
-
-                console.error(
-                    'START ERROR:',
-                    error
-                );
-
-
-                status.innerHTML =
-
-                    '<strong>Unable to start PDF generation.</strong>' +
-                    '<br><br>' +
-
-                    error.message;
-
-
-                button.disabled =
-                    false;
-
-
-                button.textContent =
-                    'Generate Member Directory';
-
-            }
-
-        }
-
-
-        /* =================================================
-           MONITOR GENERATION
-        ================================================= */
-
-        async function monitorGenerationProgress() {
-
-            const status =
-                document.getElementById(
-                    'status'
-                );
-
-
-            const button =
-                document.getElementById(
-                    'generateButton'
-                );
-
-
-            try {
-
-                const response =
-                    await fetch(
-                        API_URL +
-                        '?action=progress&cache=' +
-                        Date.now()
-                    );
-
-
-                if (!response.ok) {
-
-                    throw new Error(
-                        'Unable to read progress. HTTP ' +
-                        response.status
-                    );
-
-                }
-
-
-                const responseText =
-                    await response.text();
-
-
-                console.log(
-                    'PROGRESS RESPONSE:',
-                    responseText
-                );
-
-
-                let data;
-
-
-                try {
-
-                    data =
-                        JSON.parse(
-                            responseText
-                        );
-
-                }
-
-                catch (error) {
-
-                    throw new Error(
-                        'Invalid progress response.'
-                    );
-
-                }
-
-
-                if (!data.success) {
-
-                    throw new Error(
-                        data.error ||
-                        'Progress unavailable.'
-                    );
-
-                }
-
-
-                /* =========================================
-                   RUNNING
-                ========================================== */
-
-                if (
-                    data.status ===
-                    'RUNNING'
-                ) {
-
-                    status.innerHTML =
-
-                        '<strong>' +
-                        'Generating Member Directory' +
-                        '</strong>' +
-
-                        '<br><br>' +
-
-                        'Part ' +
-                        data.completedParts +
-                        ' of ' +
-                        data.totalParts +
-                        ' completed' +
-
-                        '<br>' +
-
-                        'Currently processing Part ' +
-                        data.currentPart +
-
-                        '<br><br>' +
-
-                        '<strong>' +
-                        data.percentage +
-                        '% complete' +
-                        '</strong>';
-
-
-                    button.disabled =
-                        true;
-
-
-                    button.textContent =
-                        'Generating...';
-
-
-                    setTimeout(
-                        monitorGenerationProgress,
-                        5000
-                    );
-
-
-                    return;
-
-                }
-
-
-                /* =========================================
-                   COMPLETED
-                ========================================== */
-
-                if (
-                    data.status ===
-                    'COMPLETED'
-                ) {
-
-                    status.innerHTML =
-
-                        '<strong>✓ Generation Complete</strong>' +
-
-                        '<br><br>' +
-
-                        data.memberCount +
-                        ' members processed' +
-
-                        '<br>' +
-
-                        data.totalParts +
-                        ' PDF parts generated' +
-
-                        '<br><br>' +
-
-                        '100% complete';
-
-
-                    button.disabled =
-                        false;
-
-
-                    button.textContent =
-                        'Generate Member Directory';
-
-
-                    document.getElementById(
-                        'memberCount'
-                    ).textContent =
-                        data.memberCount;
-
-
-                    document.getElementById(
-                        'partCount'
-                    ).textContent =
-                        data.totalParts;
-
-
-                    document.getElementById(
-                        'statusNumber'
-                    ).textContent =
-                        'Ready';
-
-
-                    await loadPDFs();
-
-
-                    return;
-
-                }
-
-
-                /* =========================================
-                   STOPPED
-                ========================================== */
-
-                if (
-                    data.status ===
-                    'STOPPED'
-                ) {
-
-                    status.innerHTML =
-
-                        '<strong>Generation stopped.</strong>' +
-
-                        '<br><br>' +
-
-                        'You can start the generation again.';
-
-
-                    button.disabled =
-                        false;
-
-
-                    button.textContent =
-                        'Generate Member Directory';
-
-
-                    return;
-
-                }
-
-
-                /* =========================================
-                   ERROR
-                ========================================== */
-
-                if (
-                    typeof data.status ===
-                    'string' &&
-                    data.status.startsWith(
-                        'ERROR'
-                    )
-                ) {
-
-                    status.innerHTML =
-
-                        '<strong>Generation error</strong>' +
-
-                        '<br><br>' +
-
-                        data.status;
-
-
-                    button.disabled =
-                        false;
-
-
-                    button.textContent =
-                        'Generate Member Directory';
-
-
-                    return;
-
-                }
-
-
-                /* =========================================
-                   UNKNOWN
-                ========================================== */
-
-                status.innerHTML =
-
-                    'Generation status: ' +
-                    data.status;
-
-
-                button.disabled =
-                    false;
-
-
-                button.textContent =
-                    'Generate Member Directory';
-
-            }
-
-            catch (error) {
-
-                console.error(
-                    'PROGRESS ERROR:',
-                    error
-                );
-
-
-                status.innerHTML =
-
-                    '<strong>System status: Connecting...</strong>' +
-
-                    '<br><br>' +
-
-                    'The PDF process may still be running.' +
-
-                    '<br>' +
-
-                    'Checking again in 5 seconds...';
-
-
-                button.disabled =
-                    true;
-
-
-                button.textContent =
-                    'Generating...';
-
-
-                setTimeout(
-                    monitorGenerationProgress,
-                    5000
-                );
-
-            }
-
-        }
-
-
-        /* =================================================
-           INITIALIZE
-        ================================================= */
-
-        async function initializePage() {
-
-            console.log(
-                'Gandhinagar Odiya Samaj website loading...'
-            );
+            button.textContent =
+                'Generate Member Directory';
 
 
             await loadDirectoryStatus();
 
-
             await loadPDFs();
 
-
-            console.log(
-                'Gandhinagar Odiya Samaj website loaded.'
-            );
-
+            return;
         }
 
 
-        /* =================================================
-           PAGE LOAD
-        ================================================= */
+        /* ====================================================
+           ERROR
+           ==================================================== */
 
-        window.addEventListener(
-            'DOMContentLoaded',
-            initializePage
+        if (
+            data.status &&
+            data.status.startsWith(
+                'ERROR'
+            )
+        ) {
+
+            status.innerHTML =
+
+                '<strong>Generation Error</strong><br><br>' +
+
+                data.status;
+
+
+            button.disabled =
+                false;
+
+            button.textContent =
+                'Generate Member Directory';
+
+            return;
+        }
+
+
+        /* ====================================================
+           STOPPED
+           ==================================================== */
+
+        if (
+            data.status ===
+            'STOPPED'
+        ) {
+
+            status.innerHTML =
+                '<strong>Generation stopped.</strong>';
+
+            button.disabled =
+                false;
+
+            button.textContent =
+                'Generate Member Directory';
+
+            return;
+        }
+
+
+        setTimeout(
+            monitorGenerationProgress,
+            5000
         );
 
-    </script>
+    }
+
+    catch (error) {
+
+        console.error(error);
+
+        status.textContent =
+            'Unable to read generation progress. ' +
+            'Retrying...';
+
+        setTimeout(
+            monitorGenerationProgress,
+            5000
+        );
+    }
+}
+
+
+/* ============================================================
+   INITIALIZE
+   ============================================================ */
+
+async function initializePage() {
+
+    await loadDirectoryStatus();
+
+    await loadPDFs();
+}
+
+
+/* ============================================================
+   PAGE LOAD
+   ============================================================ */
+
+window.addEventListener(
+    'DOMContentLoaded',
+    initializePage
+);
+
+</script>
 
 </body>
-
 </html>
