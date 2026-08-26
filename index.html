@@ -17,10 +17,6 @@
 
     <style>
 
-        /* =====================================================
-           GENERAL
-        ===================================================== */
-
         * {
             box-sizing: border-box;
         }
@@ -383,12 +379,60 @@
             font-size: 14px;
 
             font-weight: 600;
+
+            display: inline-block;
         }
 
 
         .download-button:hover {
 
             background: #35627d;
+        }
+
+
+        /* =====================================================
+           LOADING
+        ===================================================== */
+
+        .loading {
+
+            text-align: center;
+
+            padding: 25px;
+
+            color: #777;
+        }
+
+
+        /* =====================================================
+           EMPTY
+        ===================================================== */
+
+        .empty {
+
+            text-align: center;
+
+            padding: 25px;
+
+            color: #777;
+        }
+
+
+        /* =====================================================
+           ERROR
+        ===================================================== */
+
+        .error {
+
+            text-align: center;
+
+            padding: 25px;
+
+            color: #b42318;
+
+            background: #fff1f0;
+
+            border-radius: 8px;
         }
 
 
@@ -441,6 +485,14 @@
                 gap: 12px;
             }
 
+
+            .download-button {
+
+                width: 100%;
+
+                text-align: center;
+            }
+
         }
 
     </style>
@@ -453,17 +505,10 @@
 
     <!-- =====================================================
          HEADER
-    ====================================================== -->
+    ===================================================== -->
 
     <header class="header">
 
-
-        <!--
-            TEMPORARY LOGO
-
-            We will replace this with the actual
-            Gandhinagar Odiya Samaj logo later.
-        -->
 
         <div
             class="logo-placeholder"
@@ -491,8 +536,8 @@
 
 
     <!-- =====================================================
-         MAIN CONTENT
-    ====================================================== -->
+         MAIN
+    ===================================================== -->
 
     <main class="container">
 
@@ -504,8 +549,6 @@
         <section class="stats">
 
 
-            <!-- TOTAL MEMBERS -->
-
             <div class="stat-card">
 
                 <div
@@ -514,7 +557,6 @@
                 >
                     0
                 </div>
-
 
                 <div class="stat-label">
 
@@ -526,8 +568,6 @@
 
 
 
-            <!-- PDF PARTS -->
-
             <div class="stat-card">
 
                 <div
@@ -536,7 +576,6 @@
                 >
                     0
                 </div>
-
 
                 <div class="stat-label">
 
@@ -548,8 +587,6 @@
 
 
 
-            <!-- STATUS -->
-
             <div class="stat-card">
 
                 <div
@@ -558,7 +595,6 @@
                 >
                     Connecting...
                 </div>
-
 
                 <div class="stat-label">
 
@@ -574,7 +610,7 @@
 
 
         <!-- =================================================
-             GENERATE SECTION
+             GENERATE
         ================================================== -->
 
         <section class="generate-card">
@@ -622,7 +658,7 @@
 
 
         <!-- =================================================
-             PDF SECTION
+             GENERATED PDFs
         ================================================== -->
 
         <section class="pdf-section">
@@ -640,25 +676,9 @@
                 id="pdfList"
             >
 
-                <div class="pdf-item">
+                <div class="loading">
 
-                    <div>
-
-                        <div class="pdf-name">
-
-                            PDF files will appear here
-
-                        </div>
-
-
-                        <div class="pdf-info">
-
-                            Generated PDF files will be
-                            displayed here.
-
-                        </div>
-
-                    </div>
+                    Loading generated PDFs...
 
                 </div>
 
@@ -674,7 +694,7 @@
 
     <!-- =====================================================
          FOOTER
-    ====================================================== -->
+    ===================================================== -->
 
     <footer>
 
@@ -686,7 +706,7 @@
 
     <!-- =====================================================
          JAVASCRIPT
-    ====================================================== -->
+    ===================================================== -->
 
     <script>
 
@@ -701,7 +721,7 @@
 
 
         /* =====================================================
-           LOAD LIVE DIRECTORY STATUS
+           LOAD DIRECTORY STATUS
         ===================================================== */
 
         async function loadDirectoryStatus() {
@@ -755,10 +775,6 @@
 
 
 
-                /* ---------------------------------------------
-                   UPDATE MEMBER COUNT
-                --------------------------------------------- */
-
                 document.getElementById(
                     'memberCount'
                 ).textContent =
@@ -766,20 +782,12 @@
 
 
 
-                /* ---------------------------------------------
-                   UPDATE PDF PART COUNT
-                --------------------------------------------- */
-
                 document.getElementById(
                     'partCount'
                 ).textContent =
                     data.partCount;
 
 
-
-                /* ---------------------------------------------
-                   UPDATE SYSTEM STATUS
-                --------------------------------------------- */
 
                 document.getElementById(
                     'statusNumber'
@@ -811,16 +819,234 @@
                 );
 
 
+                document.getElementById(
+                    'statusNumber'
+                ).textContent =
+                    'Offline';
+
+
                 status.textContent =
 
                     'Unable to connect to the GOS database.';
 
 
+            }
 
+        }
+
+
+
+        /* =====================================================
+           LOAD GENERATED PDF FILES
+        ===================================================== */
+
+        async function loadPDFs() {
+
+
+            const pdfList =
                 document.getElementById(
-                    'statusNumber'
-                ).textContent =
-                    'Offline';
+                    'pdfList'
+                );
+
+
+            pdfList.innerHTML =
+
+                '<div class="loading">' +
+                'Loading generated PDFs...' +
+                '</div>';
+
+
+            try {
+
+
+                const response =
+                    await fetch(
+                        API_URL +
+                        '?action=pdfs'
+                    );
+
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        'Unable to load PDF files.'
+                    );
+
+                }
+
+
+
+                const data =
+                    await response.json();
+
+
+
+                if (!data.success) {
+
+                    throw new Error(
+                        data.error ||
+                        'Unable to load PDF files.'
+                    );
+
+                }
+
+
+
+                pdfList.innerHTML = '';
+
+
+
+                if (
+                    !data.files ||
+                    data.files.length === 0
+                ) {
+
+
+                    pdfList.innerHTML =
+
+                        '<div class="empty">' +
+
+                        'No PDF files have been generated yet.' +
+
+                        '</div>';
+
+
+                    return;
+
+                }
+
+
+
+                data.files.forEach(
+                    function(file) {
+
+
+                        const item =
+                            document.createElement(
+                                'div'
+                            );
+
+
+                        item.className =
+                            'pdf-item';
+
+
+
+                        const information =
+                            document.createElement(
+                                'div'
+                            );
+
+
+
+                        const name =
+                            document.createElement(
+                                'div'
+                            );
+
+
+                        name.className =
+                            'pdf-name';
+
+
+                        name.textContent =
+                            file.name;
+
+
+
+                        const info =
+                            document.createElement(
+                                'div'
+                            );
+
+
+                        info.className =
+                            'pdf-info';
+
+
+                        info.textContent =
+                            'Generated PDF';
+
+
+                        information.appendChild(
+                            name
+                        );
+
+
+                        information.appendChild(
+                            info
+                        );
+
+
+
+                        const download =
+                            document.createElement(
+                                'a'
+                            );
+
+
+                        download.className =
+                            'download-button';
+
+
+                        download.href =
+                            file.downloadUrl;
+
+
+                        download.target =
+                            '_blank';
+
+
+                        download.rel =
+                            'noopener noreferrer';
+
+
+                        download.textContent =
+                            'Download PDF';
+
+
+
+                        item.appendChild(
+                            information
+                        );
+
+
+                        item.appendChild(
+                            download
+                        );
+
+
+                        pdfList.appendChild(
+                            item
+                        );
+
+
+                    }
+                );
+
+
+            }
+
+            catch (error) {
+
+
+                console.error(
+                    error
+                );
+
+
+                pdfList.innerHTML =
+
+                    '<div class="error">' +
+
+                    'Unable to load the generated PDFs.' +
+
+                    '<br><br>' +
+
+                    error.message +
+
+                    '</div>';
 
             }
 
@@ -832,8 +1058,10 @@
            GENERATE DIRECTORY
            
            IMPORTANT:
-           This button is NOT connected to the PDF generator
-           yet. We will do that in a later step.
+           This is still a placeholder.
+
+           We will connect this button to your existing
+           PDF generation process in the next stage.
         ===================================================== */
 
         function generateDirectory() {
@@ -862,7 +1090,7 @@
 
             status.textContent =
 
-                'The PDF generation button will be connected to the existing GOS PDF generator in the next step.';
+                'The Generate button will be connected to the existing GOS PDF generator in the next step.';
 
 
 
@@ -880,7 +1108,7 @@
 
                     status.textContent =
 
-                        'Website is connected to the database. PDF generation connection is the next step.';
+                        'Website and PDF download system are connected. PDF generation connection is next.';
 
 
                 },
@@ -892,12 +1120,28 @@
 
 
         /* =====================================================
-           LOAD DATA WHEN PAGE OPENS
+           INITIALIZE PAGE
+        ===================================================== */
+
+        async function initializePage() {
+
+
+            await loadDirectoryStatus();
+
+
+            await loadPDFs();
+
+        }
+
+
+
+        /* =====================================================
+           START WHEN PAGE LOADS
         ===================================================== */
 
         window.addEventListener(
             'DOMContentLoaded',
-            loadDirectoryStatus
+            initializePage
         );
 
 
