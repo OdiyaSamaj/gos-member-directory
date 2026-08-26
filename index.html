@@ -10,9 +10,10 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <!-- =====================================================
-         PAGE TITLE
-    ====================================================== -->
+    <meta
+        name="theme-color"
+        content="#1d3557"
+    >
 
     <title>
         Gandhinagar Odiya Samaj - Member Directory
@@ -20,32 +21,21 @@
 
 
     <!-- =====================================================
-         WEBSITE LOGO / FAVICON
-         
-         IMPORTANT:
-         Put your logo image in the same GitHub repository
-         and name it:
-
-             logo.png
-    ====================================================== -->
+         GOS LOGO / FAVICON
+         ===================================================== -->
 
     <link
         rel="icon"
-        type="image/png"
-        href="logo.png"
+        type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='47' fill='%231d3557'/%3E%3Ccircle cx='50' cy='50' r='39' fill='white'/%3E%3Ctext x='50' y='59' text-anchor='middle' font-family='Arial' font-size='28' font-weight='bold' fill='%231d3557'%3EGOS%3C/text%3E%3C/svg%3E"
     >
 
-    <link
-        rel="apple-touch-icon"
-        href="logo.png"
-    >
-
-
-    <!-- =====================================================
-         STYLES
-    ====================================================== -->
 
     <style>
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
 
         * {
             box-sizing: border-box;
@@ -71,6 +61,9 @@
 
             color:
                 #222;
+
+            min-height:
+                100vh;
         }
 
 
@@ -84,17 +77,17 @@
                 linear-gradient(
                     135deg,
                     #ffffff,
-                    #f0f4f8
+                    #eef3f8
                 );
 
             padding:
-                40px 20px;
+                40px 20px 35px;
 
             text-align:
                 center;
 
             border-bottom:
-                1px solid #ddd;
+                1px solid #dfe5eb;
         }
 
 
@@ -105,19 +98,22 @@
         .logo {
 
             width:
-                130px;
+                125px;
 
             height:
-                130px;
+                125px;
 
-            object-fit:
-                contain;
+            margin:
+                0 auto 18px;
 
             display:
                 block;
 
-            margin:
-                0 auto 18px auto;
+            filter:
+                drop-shadow(
+                    0 4px 8px
+                    rgba(0,0,0,0.12)
+                );
         }
 
 
@@ -143,7 +139,7 @@
         .subtitle {
 
             margin-top:
-                8px;
+                9px;
 
             font-size:
                 17px;
@@ -193,10 +189,10 @@
         .stat-card {
 
             background:
-                white;
+                #ffffff;
 
             border-radius:
-                12px;
+                14px;
 
             padding:
                 25px;
@@ -212,6 +208,9 @@
                     0,
                     0.08
                 );
+
+            border:
+                1px solid #edf0f3;
         }
 
 
@@ -242,19 +241,19 @@
 
 
         /* =====================================================
-           GENERATE SECTION
+           GENERATE CARD
         ===================================================== */
 
         .generate-card {
 
             background:
-                white;
+                #ffffff;
 
             border-radius:
-                12px;
+                14px;
 
             padding:
-                30px;
+                35px 30px;
 
             text-align:
                 center;
@@ -270,6 +269,9 @@
 
             margin-bottom:
                 30px;
+
+            border:
+                1px solid #edf0f3;
         }
 
 
@@ -277,6 +279,9 @@
 
             margin-top:
                 0;
+
+            margin-bottom:
+                10px;
 
             color:
                 #1d3557;
@@ -290,8 +295,18 @@
 
             line-height:
                 1.6;
+
+            max-width:
+                700px;
+
+            margin:
+                0 auto 25px;
         }
 
+
+        /* =====================================================
+           GENERATE BUTTON
+        ===================================================== */
 
         .generate-button {
 
@@ -321,6 +336,9 @@
 
             transition:
                 0.2s;
+
+            min-width:
+                250px;
         }
 
 
@@ -348,19 +366,19 @@
 
 
         /* =====================================================
-           STATUS
+           STATUS BOX
         ===================================================== */
 
         .status {
 
             margin-top:
-                20px;
+                22px;
 
             padding:
                 16px;
 
             border-radius:
-                8px;
+                9px;
 
             background:
                 #f1f5f9;
@@ -373,6 +391,84 @@
 
             line-height:
                 1.6;
+
+            min-height:
+                50px;
+        }
+
+
+        /* =====================================================
+           PROGRESS BAR
+        ===================================================== */
+
+        .progress-container {
+
+            display:
+                none;
+
+            margin-top:
+                18px;
+        }
+
+
+        .progress-container.visible {
+
+            display:
+                block;
+        }
+
+
+        .progress-bar-background {
+
+            width:
+                100%;
+
+            height:
+                12px;
+
+            background:
+                #e5e7eb;
+
+            border-radius:
+                20px;
+
+            overflow:
+                hidden;
+        }
+
+
+        .progress-bar {
+
+            width:
+                0%;
+
+            height:
+                100%;
+
+            background:
+                #457b9d;
+
+            border-radius:
+                20px;
+
+            transition:
+                width 0.5s ease;
+        }
+
+
+        .progress-text {
+
+            margin-top:
+                8px;
+
+            font-size:
+                13px;
+
+            color:
+                #777;
+
+            text-align:
+                center;
         }
 
 
@@ -383,10 +479,10 @@
         .pdf-section {
 
             background:
-                white;
+                #ffffff;
 
             border-radius:
-                12px;
+                14px;
 
             padding:
                 30px;
@@ -399,6 +495,9 @@
                     0,
                     0.08
                 );
+
+            border:
+                1px solid #edf0f3;
         }
 
 
@@ -443,7 +542,7 @@
                 1px solid #e1e5ea;
 
             border-radius:
-                8px;
+                9px;
 
             background:
                 #fafbfc;
@@ -472,6 +571,10 @@
                 4px;
         }
 
+
+        /* =====================================================
+           DOWNLOAD BUTTON
+        ===================================================== */
 
         .download-button {
 
@@ -508,6 +611,48 @@
 
             background:
                 #35627d;
+
+            transform:
+                translateY(-1px);
+        }
+
+
+        /* =====================================================
+           REFRESH BUTTON
+        ===================================================== */
+
+        .refresh-button {
+
+            border:
+                1px solid #457b9d;
+
+            background:
+                white;
+
+            color:
+                #457b9d;
+
+            border-radius:
+                6px;
+
+            padding:
+                8px 15px;
+
+            cursor:
+                pointer;
+
+            font-weight:
+                600;
+
+            float:
+                right;
+        }
+
+
+        .refresh-button:hover {
+
+            background:
+                #f0f6fa;
         }
 
 
@@ -555,7 +700,7 @@
                 center;
 
             padding:
-                25px;
+                20px;
 
             color:
                 #b42318;
@@ -565,6 +710,23 @@
 
             border-radius:
                 8px;
+
+            line-height:
+                1.6;
+        }
+
+
+        /* =====================================================
+           SUCCESS
+        ===================================================== */
+
+        .success {
+
+            color:
+                #176b3a;
+
+            background:
+                #ecfdf3;
         }
 
 
@@ -596,6 +758,37 @@
             max-width: 700px
         ) {
 
+            .header {
+
+                padding:
+                    30px 15px;
+            }
+
+
+            .logo {
+
+                width:
+                    100px;
+
+                height:
+                    100px;
+            }
+
+
+            .samaj-name {
+
+                font-size:
+                    23px;
+            }
+
+
+            .subtitle {
+
+                font-size:
+                    15px;
+            }
+
+
             .stats {
 
                 grid-template-columns:
@@ -603,20 +796,24 @@
             }
 
 
-            .samaj-name {
+            .generate-card {
 
-                font-size:
-                    24px;
+                padding:
+                    25px 18px;
             }
 
 
-            .logo {
+            .generate-button {
 
                 width:
-                    105px;
+                    100%;
+            }
 
-                height:
-                    105px;
+
+            .pdf-section {
+
+                padding:
+                    20px 15px;
             }
 
 
@@ -642,6 +839,16 @@
                     center;
             }
 
+
+            .refresh-button {
+
+                float:
+                    none;
+
+                margin-top:
+                    10px;
+            }
+
         }
 
     </style>
@@ -654,17 +861,54 @@
 
     <!-- =====================================================
          HEADER
-    ====================================================== -->
+    ===================================================== -->
 
     <header class="header">
 
-        <!-- GOS LOGO -->
-
-        <img
-            src="logo.png"
-            alt="Gandhinagar Odiya Samaj Logo"
+        <!-- Inline GOS Logo -->
+        <svg
             class="logo"
+            viewBox="0 0 200 200"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-label="Gandhinagar Odiya Samaj logo"
         >
+
+            <circle
+                cx="100"
+                cy="100"
+                r="94"
+                fill="#1d3557"
+            />
+
+            <circle
+                cx="100"
+                cy="100"
+                r="80"
+                fill="#ffffff"
+            />
+
+            <circle
+                cx="100"
+                cy="100"
+                r="68"
+                fill="#f0f4f8"
+                stroke="#1d3557"
+                stroke-width="4"
+            />
+
+            <text
+                x="100"
+                y="113"
+                text-anchor="middle"
+                font-family="Arial, Helvetica, sans-serif"
+                font-size="48"
+                font-weight="800"
+                fill="#1d3557"
+            >
+                GOS
+            </text>
+
+        </svg>
 
 
         <h1 class="samaj-name">
@@ -686,14 +930,14 @@
 
     <!-- =====================================================
          MAIN
-    ====================================================== -->
+    ===================================================== -->
 
     <main class="container">
 
 
         <!-- =================================================
              STATISTICS
-        ================================================== -->
+        ================================================= -->
 
         <section class="stats">
 
@@ -759,8 +1003,8 @@
 
 
         <!-- =================================================
-             GENERATE
-        ================================================== -->
+             GENERATE SECTION
+        ================================================= -->
 
         <section class="generate-card">
 
@@ -774,8 +1018,8 @@
 
             <p>
 
-                Generate the latest member directory
-                PDFs from the Gandhinagar Odiya Samaj
+                Generate the latest Gandhinagar Odiya Samaj
+                member directory PDFs directly from the
                 member database.
 
             </p>
@@ -784,6 +1028,7 @@
             <button
                 class="generate-button"
                 id="generateButton"
+                type="button"
                 onclick="generateDirectory()"
             >
 
@@ -802,15 +1047,53 @@
             </div>
 
 
+            <!-- Progress -->
+
+            <div
+                class="progress-container"
+                id="progressContainer"
+            >
+
+                <div class="progress-bar-background">
+
+                    <div
+                        class="progress-bar"
+                        id="progressBar"
+                    ></div>
+
+                </div>
+
+
+                <div
+                    class="progress-text"
+                    id="progressText"
+                >
+                    0%
+                </div>
+
+            </div>
+
+
         </section>
 
 
 
         <!-- =================================================
-             GENERATED PDFs
-        ================================================== -->
+             GENERATED PDFS
+        ================================================= -->
 
         <section class="pdf-section">
+
+
+            <button
+                class="refresh-button"
+                type="button"
+                onclick="loadPDFs()"
+            >
+
+                Refresh
+
+            </button>
 
 
             <h2>
@@ -870,15 +1153,35 @@
 
 
         /* =====================================================
+           GLOBAL STATE
+        ===================================================== */
+
+        let progressTimer = null;
+
+        let generationRunning = false;
+
+
+
+        /* =====================================================
+           HELPER
+        ===================================================== */
+
+        function getElement(id) {
+
+            return document.getElementById(id);
+
+        }
+
+
+
+        /* =====================================================
            LOAD DIRECTORY STATUS
         ===================================================== */
 
         async function loadDirectoryStatus() {
 
             const status =
-                document.getElementById(
-                    'status'
-                );
+                getElement('status');
 
 
             try {
@@ -890,7 +1193,8 @@
                 const response =
                     await fetch(
                         API_URL +
-                        '?action=status'
+                        '?action=status&ts=' +
+                        Date.now()
                     );
 
 
@@ -917,19 +1221,19 @@
                 }
 
 
-                document.getElementById(
+                getElement(
                     'memberCount'
                 ).textContent =
                     data.memberCount;
 
 
-                document.getElementById(
+                getElement(
                     'partCount'
                 ).textContent =
                     data.partCount;
 
 
-                document.getElementById(
+                getElement(
                     'statusNumber'
                 ).textContent =
                     'Ready';
@@ -955,15 +1259,17 @@
                 console.error(error);
 
 
-                document.getElementById(
+                getElement(
                     'statusNumber'
                 ).textContent =
                     'Offline';
 
 
-                status.textContent =
+                status.innerHTML =
 
-                    'Unable to connect to the GOS database.';
+                    '<strong>Unable to connect.</strong><br>' +
+
+                    'Please check the Google Apps Script Web App.';
 
             }
 
@@ -978,9 +1284,7 @@
         async function loadPDFs() {
 
             const pdfList =
-                document.getElementById(
-                    'pdfList'
-                );
+                getElement('pdfList');
 
 
             pdfList.innerHTML =
@@ -995,7 +1299,8 @@
                 const response =
                     await fetch(
                         API_URL +
-                        '?action=pdfs'
+                        '?action=pdfs&ts=' +
+                        Date.now()
                     );
 
 
@@ -1087,7 +1392,7 @@
 
 
                         info.textContent =
-                            'Generated PDF';
+                            'Gandhinagar Odiya Samaj Member Directory';
 
 
                         information.appendChild(
@@ -1143,6 +1448,7 @@
                     }
                 );
 
+
             }
 
             catch (error) {
@@ -1154,7 +1460,7 @@
 
                     '<div class="error">' +
 
-                    'Unable to load the generated PDFs.' +
+                    '<strong>Unable to load PDFs.</strong>' +
 
                     '<br><br>' +
 
@@ -1169,28 +1475,55 @@
 
 
         /* =====================================================
-           START PDF GENERATION
+           GENERATE DIRECTORY
         ===================================================== */
 
         async function generateDirectory() {
 
+            if (generationRunning) {
+
+                return;
+
+            }
+
+
             const button =
-                document.getElementById(
+                getElement(
                     'generateButton'
                 );
 
 
             const status =
-                document.getElementById(
+                getElement(
                     'status'
                 );
 
 
-            button.disabled = true;
+            const progressContainer =
+                getElement(
+                    'progressContainer'
+                );
+
+
+            generationRunning = true;
+
+
+            button.disabled =
+                true;
 
 
             button.textContent =
                 'Starting...';
+
+
+            progressContainer.classList.add(
+                'visible'
+            );
+
+
+            setProgress(
+                0
+            );
 
 
             status.textContent =
@@ -1202,7 +1535,8 @@
                 const response =
                     await fetch(
                         API_URL +
-                        '?action=start'
+                        '?action=start&ts=' +
+                        Date.now()
                     );
 
 
@@ -1229,8 +1563,11 @@
                 }
 
 
-                status.textContent =
-                    'PDF generation started.';
+                status.innerHTML =
+
+                    '<strong>PDF generation started.</strong><br>' +
+
+                    'The system is processing the members in batches of 5.';
 
 
                 button.textContent =
@@ -1239,6 +1576,7 @@
 
                 monitorGenerationProgress();
 
+
             }
 
             catch (error) {
@@ -1246,8 +1584,14 @@
                 console.error(error);
 
 
-                status.textContent =
-                    'Error: ' +
+                generationRunning =
+                    false;
+
+
+                status.innerHTML =
+
+                    '<strong>Unable to start generation.</strong><br><br>' +
+
                     error.message;
 
 
@@ -1265,19 +1609,31 @@
 
 
         /* =====================================================
-           MONITOR PDF GENERATION
+           MONITOR GENERATION PROGRESS
         ===================================================== */
 
         async function monitorGenerationProgress() {
 
+            if (progressTimer) {
+
+                clearTimeout(
+                    progressTimer
+                );
+
+                progressTimer =
+                    null;
+
+            }
+
+
             const status =
-                document.getElementById(
+                getElement(
                     'status'
                 );
 
 
             const button =
-                document.getElementById(
+                getElement(
                     'generateButton'
                 );
 
@@ -1287,7 +1643,8 @@
                 const response =
                     await fetch(
                         API_URL +
-                        '?action=progress'
+                        '?action=progress&ts=' +
+                        Date.now()
                     );
 
 
@@ -1314,14 +1671,31 @@
                 }
 
 
-                /* =============================================
+                /* =================================================
                    RUNNING
-                ============================================== */
+                ================================================= */
 
                 if (
                     data.status ===
                     'RUNNING'
                 ) {
+
+                    generationRunning =
+                        true;
+
+
+                    button.disabled =
+                        true;
+
+
+                    button.textContent =
+                        'Generating...';
+
+
+                    setProgress(
+                        data.percentage
+                    );
+
 
                     status.innerHTML =
 
@@ -1342,18 +1716,11 @@
                         '% complete</strong>';
 
 
-                    button.disabled =
-                        true;
-
-
-                    button.textContent =
-                        'Generating...';
-
-
-                    setTimeout(
-                        monitorGenerationProgress,
-                        5000
-                    );
+                    progressTimer =
+                        setTimeout(
+                            monitorGenerationProgress,
+                            5000
+                        );
 
 
                     return;
@@ -1362,14 +1729,23 @@
 
 
 
-                /* =============================================
+                /* =================================================
                    COMPLETED
-                ============================================== */
+                ================================================= */
 
                 if (
                     data.status ===
                     'COMPLETED'
                 ) {
+
+                    generationRunning =
+                        false;
+
+
+                    setProgress(
+                        100
+                    );
+
 
                     status.innerHTML =
 
@@ -1384,21 +1760,17 @@
                         '<strong>100% complete</strong>';
 
 
+                    status.classList.add(
+                        'success'
+                    );
+
+
                     button.disabled =
                         false;
 
 
                     button.textContent =
                         'Generate Member Directory';
-
-
-                    document.getElementById(
-                        'statusNumber'
-                    ).textContent =
-                        'Ready';
-
-
-                    await loadDirectoryStatus();
 
 
                     await loadPDFs();
@@ -1410,20 +1782,24 @@
 
 
 
-                /* =============================================
+                /* =================================================
                    STOPPED
-                ============================================== */
+                ================================================= */
 
                 if (
                     data.status ===
                     'STOPPED'
                 ) {
 
+                    generationRunning =
+                        false;
+
+
                     status.innerHTML =
 
                         '<strong>Generation stopped.</strong><br><br>' +
 
-                        'Please check the Apps Script status.';
+                        'You can start the generation again.';
 
 
                     button.disabled =
@@ -1440,9 +1816,9 @@
 
 
 
-                /* =============================================
+                /* =================================================
                    ERROR
-                ============================================== */
+                ================================================= */
 
                 if (
                     String(
@@ -1451,6 +1827,10 @@
                         'ERROR'
                     )
                 ) {
+
+                    generationRunning =
+                        false;
+
 
                     status.innerHTML =
 
@@ -1473,9 +1853,9 @@
 
 
 
-                /* =============================================
+                /* =================================================
                    UNKNOWN STATUS
-                ============================================== */
+                ================================================= */
 
                 status.textContent =
 
@@ -1483,12 +1863,11 @@
                     data.status;
 
 
-                button.disabled =
-                    false;
-
-
-                button.textContent =
-                    'Generate Member Directory';
+                progressTimer =
+                    setTimeout(
+                        monitorGenerationProgress,
+                        5000
+                    );
 
             }
 
@@ -1497,15 +1876,167 @@
                 console.error(error);
 
 
+                /*
+                 * Do NOT immediately declare the
+                 * generation failed.
+                 *
+                 * Google Apps Script may temporarily
+                 * refuse a request while the batch is
+                 * executing.
+                 */
+
                 status.textContent =
 
-                    'Unable to read generation progress. ' +
-                    'Trying again...';
+                    'Checking generation status... ' +
+                    'The PDF process may still be running.';
 
 
-                setTimeout(
-                    monitorGenerationProgress,
-                    5000
+                progressTimer =
+                    setTimeout(
+                        monitorGenerationProgress,
+                        5000
+                    );
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           SET PROGRESS
+        ===================================================== */
+
+        function setProgress(
+            percentage
+        ) {
+
+            let value =
+                Number(
+                    percentage
+                );
+
+
+            if (
+                Number.isNaN(value)
+            ) {
+
+                value =
+                    0;
+
+            }
+
+
+            value =
+                Math.max(
+                    0,
+                    Math.min(
+                        100,
+                        value
+                    )
+                );
+
+
+            getElement(
+                'progressBar'
+            ).style.width =
+                value + '%';
+
+
+            getElement(
+                'progressText'
+            ).textContent =
+                Math.round(value) +
+                '%';
+
+        }
+
+
+
+        /* =====================================================
+           CHECK IF GENERATION IS ALREADY RUNNING
+        ===================================================== */
+
+        async function checkExistingGeneration() {
+
+            try {
+
+                const response =
+                    await fetch(
+                        API_URL +
+                        '?action=progress&ts=' +
+                        Date.now()
+                    );
+
+
+                if (!response.ok) {
+
+                    return;
+
+                }
+
+
+                const data =
+                    await response.json();
+
+
+                if (!data.success) {
+
+                    return;
+
+                }
+
+
+                if (
+                    data.status ===
+                    'RUNNING'
+                ) {
+
+                    generationRunning =
+                        true;
+
+
+                    getElement(
+                        'generateButton'
+                    ).disabled =
+                        true;
+
+
+                    getElement(
+                        'generateButton'
+                    ).textContent =
+                        'Generating...';
+
+
+                    getElement(
+                        'progressContainer'
+                    ).classList.add(
+                        'visible'
+                    );
+
+
+                    monitorGenerationProgress();
+
+                }
+
+
+                else if (
+                    data.status ===
+                    'COMPLETED'
+                ) {
+
+                    setProgress(
+                        100
+                    );
+
+                }
+
+            }
+
+            catch (error) {
+
+                console.log(
+                    'Initial progress check failed.'
                 );
 
             }
@@ -1524,19 +2055,20 @@
 
             await loadPDFs();
 
+            await checkExistingGeneration();
+
         }
 
 
 
         /* =====================================================
-           PAGE LOAD
+           START WHEN PAGE LOADS
         ===================================================== */
 
         window.addEventListener(
             'DOMContentLoaded',
             initializePage
         );
-
 
     </script>
 
