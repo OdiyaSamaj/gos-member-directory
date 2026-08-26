@@ -1066,107 +1066,342 @@
 
         async function generateDirectory() {
 
-            const button =
-                document.getElementById(
-                    'generateButton'
-                );
-        
-            const status =
-                document.getElementById(
-                    'status'
-                );
-        
-        
-            button.disabled = true;
-        
-            button.textContent =
-                'Starting PDF Generation...';
-        
-        
-            status.textContent =
-                'Starting the GOS Member Directory PDF generation process...';
-        
-        
-            try {
-        
-                const response =
-                    await fetch(
-                        API_URL +
-                        '?action=start'
+                const button =
+                    document.getElementById(
+                        'generateButton'
                     );
-        
-        
-                if (!response.ok) {
-        
-                    throw new Error(
-                        'Unable to contact the PDF generator.'
+            
+                const status =
+                    document.getElementById(
+                        'status'
                     );
-        
+            
+            
+                button.disabled = true;
+            
+                button.textContent =
+                    'Starting...';
+            
+            
+                status.textContent =
+                    'Starting PDF generation...';
+            
+            
+                try {
+            
+                    const response =
+                        await fetch(
+                            API_URL +
+                            '?action=start'
+                        );
+            
+            
+                    if (!response.ok) {
+            
+                        throw new Error(
+                            'Unable to start PDF generation.'
+                        );
+            
+                    }
+            
+            
+                    const data =
+                        await response.json();
+            
+            
+                    if (!data.success) {
+            
+                        throw new Error(
+                            data.error ||
+                            'PDF generation failed to start.'
+                        );
+            
+                    }
+            
+            
+                    status.textContent =
+                        'PDF generation started.';
+            
+            
+                    button.textContent =
+                        'Generating...';
+            
+            
+                    /*
+                     * Start checking progress.
+                     */
+                    monitorGenerationProgress();
+            
+            
+                } catch (error) {
+            
+            
+                    console.error(
+                        error
+                    );
+            
+            
+                    status.textContent =
+                        'Error: ' +
+                        error.message;
+            
+            
+                    button.disabled =
+                        false;
+            
+            
+                    button.textContent =
+                        'Generate Member Directory';
+            
                 }
-        
-        
-                const data =
-                    await response.json();
-        
-        
-                if (!data.success) {
-        
-                    throw new Error(
-                        data.error ||
-                        'PDF generation could not be started.'
-                    );
-        
+            
             }
 
 
+
+    async function monitorGenerationProgress() {
+
+    const status =
+        document.getElementById(
+            'status'
+        );
+
+
+    const button =
+        document.getElementById(
+            'generateButton'
+        );
+
+
+    try {
+
+        const response =
+            await fetch(
+                API_URL +
+                '?action=progress'
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                'Unable to read generation progress.'
+            );
+
+        }
+
+
+        const data =
+            await response.json();
+
+
+        if (!data.success) {
+
+            throw new Error(
+                data.error ||
+                'Progress information unavailable.'
+            );
+
+        }
+
+
         /*
-         * The Apps Script has successfully started
-         * startMemberDirectory().
+         * RUNNING
+         */
+        if (
+            data.status ===
+            'RUNNING'
+        ) {
+
+
+            status.innerHTML =
+
+                '<strong>Generating Member Directory</strong><br><br>' +
+
+                'Part ' +
+                data.completedParts +
+                ' of ' +
+                data.totalParts +
+                ' completed<br>' +
+
+                'Currently processing Part ' +
+                data.currentPart +
+                '<br><br>' +
+
+                '<strong>' +
+                data.percentage +
+                '% complete</strong>';
+
+
+            button.disabled =
+                true;
+
+
+            button.textContent =
+                'Generating...';
+
+
+            /*
+             * Check again after 5 seconds.
+             */
+            setTimeout(
+                monitorGenerationProgress,
+                5000
+            );
+
+
+            return;
+
+        }
+
+
+
+        /*
+         * COMPLETED
+         */
+        if (
+            data.status ===
+            'COMPLETED'
+        ) {
+
+
+            status.innerHTML =
+
+                '<strong>✓ Generation Complete</strong><br><br>' +
+
+                data.memberCount +
+                ' members processed<br>' +
+
+                data.totalParts +
+                ' PDF parts generated<br><br>' +
+
+                '100% complete';
+
+
+            button.disabled =
+                false;
+
+
+            button.textContent =
+                'Generate Member Directory';
+
+
+            /*
+             * Refresh the PDF list so the
+             * newly generated files appear.
+             */
+            await loadPDFs();
+
+
+            return;
+
+        }
+
+
+
+        /*
+         * STOPPED
+         */
+        if (
+            data.status ===
+            'STOPPED'
+        ) {
+
+
+            status.innerHTML =
+
+                '<strong>Generation stopped.</strong><br><br>' +
+
+                'Please check the Apps Script status.';
+
+
+            button.disabled =
+                false;
+
+
+            button.textContent =
+                'Generate Member Directory';
+
+
+            return;
+
+        }
+
+
+
+        /*
+         * ERROR
+         */
+        if (
+            data.status.startsWith(
+                'ERROR'
+            )
+        ) {
+
+
+            status.innerHTML =
+
+                '<strong>Generation error</strong><br><br>' +
+
+                data.status;
+
+
+            button.disabled =
+                false;
+
+
+            button.textContent =
+                'Generate Member Directory';
+
+
+            return;
+
+        }
+
+
+
+        /*
+         * Unknown / not started
          */
         status.textContent =
-            'PDF generation started successfully. ' +
-            'The PDF parts are now being generated.';
+
+            'Generation status: ' +
+            data.status;
+
+
+        button.disabled =
+            false;
 
 
         button.textContent =
-            'Generation Started';
+            'Generate Member Directory';
+
+
+    } catch (error) {
+
+
+        console.error(
+            error
+        );
+
+
+        status.textContent =
+
+            'Unable to read generation progress. ' +
+            'The PDF process may still be running.';
 
 
         /*
-         * Wait a few seconds and refresh the
-         * list of available PDFs.
+         * Try again after 5 seconds.
          */
         setTimeout(
-            async function() {
-
-                await loadPDFs();
-
-            },
+            monitorGenerationProgress,
             5000
         );
 
-
-        /*
-         * Keep the button disabled for now so
-         * the user cannot accidentally start the
-         * complete generation process twice.
-         */
-        setTimeout(
-            function() {
-
-                button.disabled =
-                    false;
-
-                button.textContent =
-                    'Generate Member Directory';
-
-            },
-            10000
-        );
-
-
     }
 
+}
     catch (error) {
 
 
