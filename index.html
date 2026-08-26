@@ -10,7 +10,6 @@
         content="width=device-width, initial-scale=1.0"
     >
 
-    <!-- Browser title -->
     <title>
         Gandhinagar Odiya Samaj - Member Directory
     </title>
@@ -18,34 +17,25 @@
 
     <!-- =====================================================
          WEBSITE LOGO / FAVICON
-         logo.png must be in the same folder as index.html
-    ====================================================== -->
+         ===================================================== -->
 
     <link
         rel="icon"
         type="image/png"
-        href="logo.png"
+        href="GOS%20Logo.png"
     >
 
     <link
-        rel="apple-touch-icon"
-        href="logo.png"
+        rel="shortcut icon"
+        type="image/png"
+        href="GOS%20Logo.png"
     >
 
-
-    <!-- =====================================================
-         STYLES
-    ====================================================== -->
 
     <style>
 
         * {
             box-sizing: border-box;
-        }
-
-
-        html {
-            scroll-behavior: smooth;
         }
 
 
@@ -58,17 +48,15 @@
                 Helvetica,
                 sans-serif;
 
-            background:
-                #f5f7fa;
+            background: #f5f7fa;
 
-            color:
-                #222;
+            color: #222;
         }
 
 
         /* =====================================================
            HEADER
-        ====================================================== */
+        ===================================================== */
 
         .header {
 
@@ -76,142 +64,101 @@
                 linear-gradient(
                     135deg,
                     #ffffff,
-                    #eef3f8
+                    #f0f4f8
                 );
 
-            padding:
-                35px 20px 30px;
+            padding: 35px 20px;
 
-            text-align:
-                center;
+            text-align: center;
 
             border-bottom:
-                1px solid #dfe4ea;
+                1px solid #ddd;
         }
 
 
-        .logo {
+        /* =====================================================
+           MAIN LOGO
+        ===================================================== */
 
-            width:
-                130px;
+        .main-logo {
 
-            height:
-                130px;
+            width: 130px;
 
-            object-fit:
-                contain;
+            height: 130px;
 
-            display:
-                block;
+            object-fit: contain;
+
+            display: block;
 
             margin:
-                0 auto 18px;
-
-            border-radius:
-                50%;
-
-            background:
-                #ffffff;
-
-            padding:
-                5px;
-
-            box-shadow:
-                0 4px 15px
-                rgba(
-                    0,
-                    0,
-                    0,
-                    0.10
-                );
+                0 auto 15px auto;
         }
 
 
         .samaj-name {
 
-            margin:
-                0;
+            margin: 0;
 
-            font-size:
-                32px;
+            font-size: 32px;
 
-            font-weight:
-                800;
+            font-weight: 800;
 
-            letter-spacing:
-                1px;
+            letter-spacing: 1px;
 
-            color:
-                #1d3557;
+            color: #1d3557;
         }
 
 
         .subtitle {
 
-            margin-top:
-                8px;
+            margin-top: 8px;
 
-            font-size:
-                17px;
+            font-size: 17px;
 
-            color:
-                #666;
+            color: #666;
         }
 
 
         /* =====================================================
            MAIN CONTAINER
-        ====================================================== */
+        ===================================================== */
 
         .container {
 
-            max-width:
-                1100px;
+            max-width: 1100px;
 
-            margin:
-                35px auto;
+            margin: 35px auto;
 
-            padding:
-                0 20px;
+            padding: 0 20px;
         }
 
 
         /* =====================================================
            STATISTICS
-        ====================================================== */
+        ===================================================== */
 
         .stats {
 
-            display:
-                grid;
+            display: grid;
 
             grid-template-columns:
-                repeat(
-                    3,
-                    1fr
-                );
+                repeat(3, 1fr);
 
-            gap:
-                20px;
+            gap: 20px;
 
-            margin-bottom:
-                30px;
+            margin-bottom: 30px;
         }
 
 
         .stat-card {
 
-            background:
-                #ffffff;
+            background: white;
 
-            border-radius:
-                12px;
+            border-radius: 12px;
 
-            padding:
-                25px;
+            padding: 25px;
 
-            text-align:
-                center;
+            text-align: center;
 
             box-shadow:
                 0 3px 12px
@@ -226,47 +173,37 @@
 
         .stat-number {
 
-            font-size:
-                34px;
+            font-size: 34px;
 
-            font-weight:
-                700;
+            font-weight: 700;
 
-            color:
-                #1d3557;
+            color: #1d3557;
         }
 
 
         .stat-label {
 
-            margin-top:
-                7px;
+            margin-top: 7px;
 
-            color:
-                #777;
+            color: #777;
 
-            font-size:
-                14px;
+            font-size: 14px;
         }
 
 
         /* =====================================================
-           GENERATE CARD
-        ====================================================== */
+           GENERATE SECTION
+        ===================================================== */
 
         .generate-card {
 
-            background:
-                #ffffff;
+            background: white;
 
-            border-radius:
-                12px;
+            border-radius: 12px;
 
-            padding:
-                30px;
+            padding: 30px;
 
-            text-align:
-                center;
+            text-align: center;
 
             box-shadow:
                 0 3px 12px
@@ -277,70 +214,50 @@
                     0.08
                 );
 
-            margin-bottom:
-                30px;
+            margin-bottom: 30px;
         }
 
 
         .generate-card h2 {
 
-            margin-top:
-                0;
+            margin-top: 0;
 
-            color:
-                #1d3557;
+            color: #1d3557;
         }
 
 
         .generate-card p {
 
-            color:
-                #666;
-
-            line-height:
-                1.6;
+            color: #666;
         }
 
 
-        /* =====================================================
-           GENERATE BUTTON
-        ====================================================== */
-
         .generate-button {
 
-            border:
-                none;
+            border: none;
 
-            border-radius:
-                8px;
+            border-radius: 8px;
 
             padding:
                 14px 30px;
 
-            font-size:
-                16px;
+            font-size: 16px;
 
-            font-weight:
-                700;
+            font-weight: 700;
 
-            cursor:
-                pointer;
+            cursor: pointer;
 
-            background:
-                #1d3557;
+            background: #1d3557;
 
-            color:
-                #ffffff;
+            color: white;
 
-            transition:
-                0.2s;
+            transition: 0.2s;
         }
 
 
         .generate-button:hover {
 
-            background:
-                #274c77;
+            background: #274c77;
 
             transform:
                 translateY(-1px);
@@ -349,95 +266,70 @@
 
         .generate-button:disabled {
 
-            background:
-                #999;
+            background: #999;
 
             cursor:
                 not-allowed;
 
-            transform:
-                none;
+            transform: none;
         }
 
 
         /* =====================================================
            STATUS
-        ====================================================== */
+        ===================================================== */
 
         .status {
 
-            margin-top:
-                20px;
+            margin-top: 20px;
 
-            padding:
-                16px;
+            padding: 14px;
 
-            border-radius:
-                8px;
+            border-radius: 8px;
 
-            background:
-                #f1f5f9;
+            background: #f1f5f9;
 
-            color:
-                #555;
+            color: #555;
 
-            font-size:
-                14px;
-
-            line-height:
-                1.6;
-
-            min-height:
-                50px;
+            font-size: 14px;
         }
 
 
         /* =====================================================
            PROGRESS BAR
-        ====================================================== */
+        ===================================================== */
 
         .progress-container {
 
-            display:
-                none;
+            display: none;
 
-            margin-top:
-                18px;
+            margin-top: 20px;
+
+            text-align: left;
         }
 
 
-        .progress-background {
+        .progress-bar-background {
 
-            width:
-                100%;
+            width: 100%;
 
-            height:
-                14px;
+            height: 12px;
 
-            background:
-                #e5e7eb;
+            background: #e5e7eb;
 
-            border-radius:
-                20px;
+            border-radius: 10px;
 
-            overflow:
-                hidden;
+            overflow: hidden;
         }
 
 
         .progress-bar {
 
-            width:
-                0%;
+            width: 0%;
 
-            height:
-                100%;
+            height: 100%;
 
-            background:
-                #457b9d;
-
-            border-radius:
-                20px;
+            background: #457b9d;
 
             transition:
                 width 0.5s ease;
@@ -446,31 +338,27 @@
 
         .progress-text {
 
-            margin-top:
-                8px;
+            margin-top: 8px;
 
-            font-size:
-                13px;
+            text-align: center;
 
-            color:
-                #666;
+            font-size: 13px;
+
+            color: #666;
         }
 
 
         /* =====================================================
            PDF SECTION
-        ====================================================== */
+        ===================================================== */
 
         .pdf-section {
 
-            background:
-                #ffffff;
+            background: white;
 
-            border-radius:
-                12px;
+            border-radius: 12px;
 
-            padding:
-                30px;
+            padding: 30px;
 
             box-shadow:
                 0 3px 12px
@@ -485,211 +373,151 @@
 
         .pdf-section h2 {
 
-            margin-top:
-                0;
+            margin-top: 0;
 
-            color:
-                #1d3557;
+            color: #1d3557;
         }
 
 
         .pdf-list {
 
-            display:
-                flex;
+            display: flex;
 
-            flex-direction:
-                column;
+            flex-direction: column;
 
-            gap:
-                12px;
+            gap: 12px;
         }
 
 
         .pdf-item {
 
-            display:
-                flex;
+            display: flex;
 
             justify-content:
                 space-between;
 
-            align-items:
-                center;
+            align-items: center;
 
-            padding:
-                16px;
+            padding: 16px;
 
             border:
                 1px solid #e1e5ea;
 
-            border-radius:
-                8px;
+            border-radius: 8px;
 
-            background:
-                #fafbfc;
+            background: #fafbfc;
         }
 
 
         .pdf-name {
 
-            font-weight:
-                600;
+            font-weight: 600;
         }
 
 
         .pdf-info {
 
-            font-size:
-                13px;
+            font-size: 13px;
 
-            color:
-                #777;
+            color: #777;
 
-            margin-top:
-                4px;
+            margin-top: 4px;
         }
 
 
-        /* =====================================================
-           DOWNLOAD BUTTON
-        ====================================================== */
-
         .download-button {
 
-            text-decoration:
-                none;
+            text-decoration: none;
 
-            background:
-                #457b9d;
+            background: #457b9d;
 
-            color:
-                #ffffff;
+            color: white;
 
             padding:
                 9px 18px;
 
-            border-radius:
-                6px;
+            border-radius: 6px;
 
-            font-size:
-                14px;
+            font-size: 14px;
 
-            font-weight:
-                600;
+            font-weight: 600;
 
-            display:
-                inline-block;
-
-            transition:
-                0.2s;
+            display: inline-block;
         }
 
 
         .download-button:hover {
 
-            background:
-                #35627d;
+            background: #35627d;
         }
 
 
         /* =====================================================
            LOADING
-        ====================================================== */
+        ===================================================== */
 
         .loading {
 
-            text-align:
-                center;
+            text-align: center;
 
-            padding:
-                25px;
+            padding: 25px;
 
-            color:
-                #777;
+            color: #777;
         }
 
 
         /* =====================================================
            EMPTY
-        ====================================================== */
+        ===================================================== */
 
         .empty {
 
-            text-align:
-                center;
+            text-align: center;
 
-            padding:
-                25px;
+            padding: 25px;
 
-            color:
-                #777;
+            color: #777;
         }
 
 
         /* =====================================================
            ERROR
-        ====================================================== */
+        ===================================================== */
 
         .error {
 
-            text-align:
-                center;
+            text-align: center;
 
-            padding:
-                20px;
+            padding: 25px;
 
-            color:
-                #b42318;
+            color: #b42318;
 
-            background:
-                #fff1f0;
+            background: #fff1f0;
 
-            border-radius:
-                8px;
-
-            line-height:
-                1.6;
-        }
-
-
-        /* =====================================================
-           SUCCESS
-        ====================================================== */
-
-        .success {
-
-            color:
-                #166534;
-
-            background:
-                #ecfdf3;
+            border-radius: 8px;
         }
 
 
         /* =====================================================
            FOOTER
-        ====================================================== */
+        ===================================================== */
 
         footer {
 
-            text-align:
-                center;
+            text-align: center;
 
             padding:
                 30px 20px;
 
-            color:
-                #777;
+            color: #777;
 
-            font-size:
-                13px;
+            font-size: 13px;
         }
 
 
         /* =====================================================
            MOBILE
-        ====================================================== */
+        ===================================================== */
 
         @media (
             max-width: 700px
@@ -704,18 +532,15 @@
 
             .samaj-name {
 
-                font-size:
-                    24px;
+                font-size: 24px;
             }
 
 
-            .logo {
+            .main-logo {
 
-                width:
-                    105px;
+                width: 110px;
 
-                height:
-                    105px;
+                height: 110px;
             }
 
 
@@ -727,26 +552,15 @@
                 align-items:
                     flex-start;
 
-                gap:
-                    12px;
+                gap: 12px;
             }
 
 
             .download-button {
 
-                width:
-                    100%;
+                width: 100%;
 
-                text-align:
-                    center;
-            }
-
-
-            .generate-card,
-            .pdf-section {
-
-                padding:
-                    22px;
+                text-align: center;
             }
 
         }
@@ -761,22 +575,17 @@
 
     <!-- =====================================================
          HEADER
-    ====================================================== -->
+    ===================================================== -->
 
     <header class="header">
 
 
-        <!--
-            LOGO
-
-            logo.png must be in the same GitHub
-            repository folder as index.html.
-        -->
+        <!-- MAIN WEBPAGE LOGO -->
 
         <img
-            src="logo.png"
+            src="GOS%20Logo.png"
             alt="Gandhinagar Odiya Samaj Logo"
-            class="logo"
+            class="main-logo"
         >
 
 
@@ -800,7 +609,7 @@
 
     <!-- =====================================================
          MAIN
-    ====================================================== -->
+    ===================================================== -->
 
     <main class="container">
 
@@ -818,7 +627,7 @@
                     class="stat-number"
                     id="memberCount"
                 >
-                    --
+                    0
                 </div>
 
                 <div class="stat-label">
@@ -837,7 +646,7 @@
                     class="stat-number"
                     id="partCount"
                 >
-                    --
+                    0
                 </div>
 
                 <div class="stat-label">
@@ -873,7 +682,7 @@
 
 
         <!-- =================================================
-             GENERATE SECTION
+             GENERATE
         ================================================== -->
 
         <section class="generate-card">
@@ -888,8 +697,8 @@
 
             <p>
 
-                Generate the latest member directory PDFs
-                directly from the Gandhinagar Odiya Samaj
+                Generate the latest member directory
+                PDFs from the Gandhinagar Odiya Samaj
                 member database.
 
             </p>
@@ -906,18 +715,6 @@
             </button>
 
 
-            <!-- STATUS -->
-
-            <div
-                class="status"
-                id="status"
-            >
-
-                Connecting to GOS Member Database...
-
-            </div>
-
-
             <!-- PROGRESS BAR -->
 
             <div
@@ -925,7 +722,7 @@
                 id="progressContainer"
             >
 
-                <div class="progress-background">
+                <div class="progress-bar-background">
 
                     <div
                         class="progress-bar"
@@ -947,12 +744,22 @@
             </div>
 
 
+            <div
+                class="status"
+                id="status"
+            >
+
+                Connecting to GOS Member Database...
+
+            </div>
+
+
         </section>
 
 
 
         <!-- =================================================
-             GENERATED PDFS
+             GENERATED PDFs
         ================================================== -->
 
         <section class="pdf-section">
@@ -988,7 +795,7 @@
 
     <!-- =====================================================
          FOOTER
-    ====================================================== -->
+    ===================================================== -->
 
     <footer>
 
@@ -1000,7 +807,7 @@
 
     <!-- =====================================================
          JAVASCRIPT
-    ====================================================== -->
+    ===================================================== -->
 
     <script>
 
@@ -1035,8 +842,7 @@
                 const response =
                     await fetch(
                         API_URL +
-                        '?action=status&cache=' +
-                        Date.now()
+                        '?action=status'
                     );
 
 
@@ -1082,10 +888,15 @@
 
 
                 status.textContent =
+
                     'Connected successfully. ' +
+
                     data.memberCount +
+
                     ' members found. ' +
+
                     data.partCount +
+
                     ' PDF parts required.';
 
 
@@ -1103,8 +914,7 @@
 
 
                 status.textContent =
-                    'Unable to connect to the GOS database. ' +
-                    error.message;
+                    'Unable to connect to the GOS database.';
 
             }
 
@@ -1125,6 +935,7 @@
 
 
             pdfList.innerHTML =
+
                 '<div class="loading">' +
                 'Loading generated PDFs...' +
                 '</div>';
@@ -1135,8 +946,7 @@
                 const response =
                     await fetch(
                         API_URL +
-                        '?action=pdfs&cache=' +
-                        Date.now()
+                        '?action=pdfs'
                     );
 
 
@@ -1172,8 +982,11 @@
                 ) {
 
                     pdfList.innerHTML =
+
                         '<div class="empty">' +
+
                         'No PDF files have been generated yet.' +
+
                         '</div>';
 
                     return;
@@ -1281,6 +1094,7 @@
                     }
                 );
 
+
             }
 
             catch (error) {
@@ -1324,27 +1138,10 @@
                 );
 
 
-            const progressContainer =
-                document.getElementById(
-                    'progressContainer'
-                );
-
-
-            button.disabled =
-                true;
-
+            button.disabled = true;
 
             button.textContent =
                 'Starting...';
-
-
-            progressContainer.style.display =
-                'block';
-
-
-            setProgress(
-                0
-            );
 
 
             status.textContent =
@@ -1356,8 +1153,7 @@
                 const response =
                     await fetch(
                         API_URL +
-                        '?action=start&cache=' +
-                        Date.now()
+                        '?action=start'
                     );
 
 
@@ -1385,18 +1181,18 @@
 
 
                 status.textContent =
-                    'PDF generation started. Please wait...';
+                    'PDF generation started.';
 
 
                 button.textContent =
                     'Generating...';
 
 
-                /*
-                 * Start monitoring.
-                 */
+                showProgress();
+
 
                 monitorGenerationProgress();
+
 
             }
 
@@ -1405,8 +1201,8 @@
                 console.error(error);
 
 
-                status.innerHTML =
-                    '<strong>Unable to start generation.</strong><br>' +
+                status.textContent =
+                    'Error: ' +
                     error.message;
 
 
@@ -1417,10 +1213,6 @@
                 button.textContent =
                     'Generate Member Directory';
 
-
-                progressContainer.style.display =
-                    'none';
-
             }
 
         }
@@ -1428,7 +1220,68 @@
 
 
         /* =====================================================
-           MONITOR GENERATION PROGRESS
+           SHOW PROGRESS
+        ===================================================== */
+
+        function showProgress() {
+
+            document.getElementById(
+                'progressContainer'
+            ).style.display =
+                'block';
+
+        }
+
+
+
+        /* =====================================================
+           UPDATE PROGRESS
+        ===================================================== */
+
+        function updateProgress(data) {
+
+            const progressBar =
+                document.getElementById(
+                    'progressBar'
+                );
+
+
+            const progressText =
+                document.getElementById(
+                    'progressText'
+                );
+
+
+            const percentage =
+                Number(
+                    data.percentage || 0
+                );
+
+
+            progressBar.style.width =
+                percentage + '%';
+
+
+            progressText.textContent =
+
+                percentage +
+
+                '% complete — Part ' +
+
+                data.completedParts +
+
+                ' of ' +
+
+                data.totalParts +
+
+                ' completed';
+
+        }
+
+
+
+        /* =====================================================
+           MONITOR GENERATION
         ===================================================== */
 
         async function monitorGenerationProgress() {
@@ -1445,19 +1298,12 @@
                 );
 
 
-            const progressContainer =
-                document.getElementById(
-                    'progressContainer'
-                );
-
-
             try {
 
                 const response =
                     await fetch(
                         API_URL +
-                        '?action=progress&cache=' +
-                        Date.now()
+                        '?action=progress'
                     );
 
 
@@ -1484,13 +1330,40 @@
                 }
 
 
+                updateProgress(data);
+
+
+
                 /* =================================================
                    RUNNING
-                ================================================== */
+                ================================================= */
 
                 if (
-                    data.status === 'RUNNING'
+                    data.status ===
+                    'RUNNING'
                 ) {
+
+                    status.innerHTML =
+
+                        '<strong>Generating Member Directory</strong><br><br>' +
+
+                        'Members: ' +
+                        data.memberCount +
+
+                        '<br>' +
+
+                        'Part ' +
+                        data.currentPart +
+
+                        ' of ' +
+                        data.totalParts +
+
+                        ' is being processed.<br><br>' +
+
+                        '<strong>' +
+                        data.percentage +
+                        '% complete</strong>';
+
 
                     button.disabled =
                         true;
@@ -1499,48 +1372,6 @@
                     button.textContent =
                         'Generating...';
 
-
-                    progressContainer.style.display =
-                        'block';
-
-
-                    setProgress(
-                        data.percentage
-                    );
-
-
-                    status.innerHTML =
-
-                        '<strong>Generating Member Directory</strong>' +
-
-                        '<br><br>' +
-
-                        'Members: ' +
-                        data.memberCount +
-
-                        '<br>' +
-
-                        'Part ' +
-                        data.completedParts +
-                        ' of ' +
-                        data.totalParts +
-                        ' completed' +
-
-                        '<br>' +
-
-                        'Currently processing Part ' +
-                        data.currentPart +
-
-                        '<br><br>' +
-
-                        '<strong>' +
-                        data.percentage +
-                        '% complete</strong>';
-
-
-                    /*
-                     * Check again after 5 seconds.
-                     */
 
                     setTimeout(
                         monitorGenerationProgress,
@@ -1556,43 +1387,29 @@
 
                 /* =================================================
                    COMPLETED
-                ================================================== */
+                ================================================= */
 
                 if (
-                    data.status === 'COMPLETED'
+                    data.status ===
+                    'COMPLETED'
                 ) {
 
-                    setProgress(
-                        100
-                    );
-
-
-                    progressContainer.style.display =
-                        'block';
+                    updateProgress(data);
 
 
                     status.innerHTML =
 
-                        '<strong>✓ Generation Complete</strong>' +
-
-                        '<br><br>' +
+                        '<strong>✓ Generation Complete</strong><br><br>' +
 
                         data.memberCount +
-                        ' members processed.' +
 
-                        '<br>' +
+                        ' members processed.<br>' +
 
                         data.totalParts +
-                        ' PDF parts generated.' +
 
-                        '<br><br>' +
+                        ' PDF parts generated.<br><br>' +
 
                         '<strong>100% complete</strong>';
-
-
-                    status.classList.add(
-                        'success'
-                    );
 
 
                     button.disabled =
@@ -1602,17 +1419,6 @@
                     button.textContent =
                         'Generate Member Directory';
 
-
-                    /*
-                     * Refresh statistics.
-                     */
-
-                    await loadDirectoryStatus();
-
-
-                    /*
-                     * Refresh PDF list.
-                     */
 
                     await loadPDFs();
 
@@ -1625,17 +1431,16 @@
 
                 /* =================================================
                    STOPPED
-                ================================================== */
+                ================================================= */
 
                 if (
-                    data.status === 'STOPPED'
+                    data.status ===
+                    'STOPPED'
                 ) {
 
                     status.innerHTML =
 
-                        '<strong>Generation stopped.</strong>' +
-
-                        '<br><br>' +
+                        '<strong>Generation stopped.</strong><br><br>' +
 
                         'You can start the generation again.';
 
@@ -1656,21 +1461,17 @@
 
                 /* =================================================
                    ERROR
-                ================================================== */
+                ================================================= */
 
                 if (
-                    String(
-                        data.status
-                    ).startsWith(
+                    data.status.startsWith(
                         'ERROR'
                     )
                 ) {
 
                     status.innerHTML =
 
-                        '<strong>Generation error</strong>' +
-
-                        '<br><br>' +
+                        '<strong>Generation error</strong><br><br>' +
 
                         data.status;
 
@@ -1688,21 +1489,6 @@
                 }
 
 
-
-                /* =================================================
-                   UNKNOWN STATUS
-                ================================================== */
-
-                status.textContent =
-                    'Generation status: ' +
-                    data.status;
-
-
-                setTimeout(
-                    monitorGenerationProgress,
-                    5000
-                );
-
             }
 
             catch (error) {
@@ -1710,31 +1496,11 @@
                 console.error(error);
 
 
-                /*
-                 * Do NOT immediately assume the
-                 * generation has failed.
-                 *
-                 * Google Apps Script may still
-                 * be processing the PDFs.
-                 */
+                status.textContent =
 
-                status.innerHTML =
+                    'Unable to read generation progress. ' +
 
-                    'Connection temporarily unavailable.' +
-
-                    '<br><br>' +
-
-                    'The PDF process may still be running. ' +
-
-                    'Checking again in 5 seconds...';
-
-
-                button.disabled =
-                    true;
-
-
-                button.textContent =
-                    'Generating...';
+                    'The PDF process may still be running.';
 
 
                 setTimeout(
@@ -1743,54 +1509,6 @@
                 );
 
             }
-
-        }
-
-
-
-        /* =====================================================
-           PROGRESS BAR
-        ===================================================== */
-
-        function setProgress(
-            percentage
-        ) {
-
-            let value =
-                Number(
-                    percentage
-                );
-
-
-            if (
-                Number.isNaN(value)
-            ) {
-
-                value = 0;
-
-            }
-
-
-            value =
-                Math.max(
-                    0,
-                    Math.min(
-                        100,
-                        value
-                    )
-                );
-
-
-            document.getElementById(
-                'progressBar'
-            ).style.width =
-                value + '%';
-
-
-            document.getElementById(
-                'progressText'
-            ).textContent =
-                value + '% complete';
 
         }
 
@@ -1811,7 +1529,7 @@
 
 
         /* =====================================================
-           START WHEN PAGE LOADS
+           START PAGE
         ===================================================== */
 
         window.addEventListener(
