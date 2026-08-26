@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -12,31 +14,39 @@
         Gandhinagar Odiya Samaj - Member Directory
     </title>
 
+
     <style>
+
+        /* =====================================================
+           GENERAL
+        ===================================================== */
 
         * {
             box-sizing: border-box;
         }
 
+
         body {
+
             margin: 0;
+
             font-family:
                 Arial,
                 Helvetica,
                 sans-serif;
 
-            background:
-                #f5f7fa;
+            background: #f5f7fa;
 
             color: #222;
         }
 
 
-        /* ==============================
+        /* =====================================================
            HEADER
-        ============================== */
+        ===================================================== */
 
         .header {
+
             background:
                 linear-gradient(
                     135deg,
@@ -53,17 +63,35 @@
         }
 
 
-        .logo {
+        .logo-placeholder {
+
             width: 110px;
+
             height: 110px;
 
-            object-fit: contain;
+            margin:
+                0 auto 12px auto;
 
-            margin-bottom: 12px;
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #e9eef5;
+
+            color: #1d3557;
+
+            font-size: 24px;
+
+            font-weight: bold;
         }
 
 
         .samaj-name {
+
             margin: 0;
 
             font-size: 32px;
@@ -77,6 +105,7 @@
 
 
         .subtitle {
+
             margin-top: 8px;
 
             font-size: 17px;
@@ -85,11 +114,12 @@
         }
 
 
-        /* ==============================
+        /* =====================================================
            MAIN CONTAINER
-        ============================== */
+        ===================================================== */
 
         .container {
+
             max-width: 1100px;
 
             margin: 35px auto;
@@ -98,18 +128,16 @@
         }
 
 
-        /* ==============================
-           STAT CARDS
-        ============================== */
+        /* =====================================================
+           STATISTICS
+        ===================================================== */
 
         .stats {
+
             display: grid;
 
             grid-template-columns:
-                repeat(
-                    3,
-                    1fr
-                );
+                repeat(3, 1fr);
 
             gap: 20px;
 
@@ -118,6 +146,7 @@
 
 
         .stat-card {
+
             background: white;
 
             border-radius: 12px;
@@ -138,6 +167,7 @@
 
 
         .stat-number {
+
             font-size: 34px;
 
             font-weight: 700;
@@ -147,6 +177,7 @@
 
 
         .stat-label {
+
             margin-top: 7px;
 
             color: #777;
@@ -155,11 +186,12 @@
         }
 
 
-        /* ==============================
+        /* =====================================================
            GENERATE SECTION
-        ============================== */
+        ===================================================== */
 
         .generate-card {
+
             background: white;
 
             border-radius: 12px;
@@ -182,6 +214,7 @@
 
 
         .generate-card h2 {
+
             margin-top: 0;
 
             color: #1d3557;
@@ -189,11 +222,13 @@
 
 
         .generate-card p {
+
             color: #666;
         }
 
 
         .generate-button {
+
             border: none;
 
             border-radius: 8px;
@@ -207,19 +242,17 @@
 
             cursor: pointer;
 
-            background:
-                #1d3557;
+            background: #1d3557;
 
             color: white;
 
-            transition:
-                0.2s;
+            transition: 0.2s;
         }
 
 
         .generate-button:hover {
-            background:
-                #274c77;
+
+            background: #274c77;
 
             transform:
                 translateY(-1px);
@@ -227,30 +260,29 @@
 
 
         .generate-button:disabled {
-            background:
-                #999;
+
+            background: #999;
 
             cursor:
                 not-allowed;
 
-            transform:
-                none;
+            transform: none;
         }
 
 
-        /* ==============================
+        /* =====================================================
            STATUS
-        ============================== */
+        ===================================================== */
 
         .status {
+
             margin-top: 20px;
 
             padding: 14px;
 
             border-radius: 8px;
 
-            background:
-                #f1f5f9;
+            background: #f1f5f9;
 
             color: #555;
 
@@ -258,11 +290,12 @@
         }
 
 
-        /* ==============================
+        /* =====================================================
            PDF SECTION
-        ============================== */
+        ===================================================== */
 
         .pdf-section {
+
             background: white;
 
             border-radius: 12px;
@@ -281,6 +314,7 @@
 
 
         .pdf-section h2 {
+
             margin-top: 0;
 
             color: #1d3557;
@@ -288,6 +322,7 @@
 
 
         .pdf-list {
+
             display: flex;
 
             flex-direction: column;
@@ -297,6 +332,7 @@
 
 
         .pdf-item {
+
             display: flex;
 
             justify-content:
@@ -311,17 +347,18 @@
 
             border-radius: 8px;
 
-            background:
-                #fafbfc;
+            background: #fafbfc;
         }
 
 
         .pdf-name {
+
             font-weight: 600;
         }
 
 
         .pdf-info {
+
             font-size: 13px;
 
             color: #777;
@@ -331,10 +368,10 @@
 
 
         .download-button {
+
             text-decoration: none;
 
-            background:
-                #457b9d;
+            background: #457b9d;
 
             color: white;
 
@@ -350,19 +387,21 @@
 
 
         .download-button:hover {
-            background:
-                #35627d;
+
+            background: #35627d;
         }
 
 
-        /* ==============================
+        /* =====================================================
            FOOTER
-        ============================== */
+        ===================================================== */
 
         footer {
+
             text-align: center;
 
-            padding: 30px 20px;
+            padding:
+                30px 20px;
 
             color: #777;
 
@@ -370,26 +409,29 @@
         }
 
 
-        /* ==============================
+        /* =====================================================
            MOBILE
-        ============================== */
+        ===================================================== */
 
         @media (
             max-width: 700px
         ) {
 
             .stats {
+
                 grid-template-columns:
                     1fr;
             }
 
 
             .samaj-name {
+
                 font-size: 24px;
             }
 
 
             .pdf-item {
+
                 flex-direction:
                     column;
 
@@ -402,17 +444,19 @@
         }
 
     </style>
+
 </head>
 
 
 <body>
 
 
-    <!-- ==========================================
+    <!-- =====================================================
          HEADER
-    =========================================== -->
+    ====================================================== -->
 
     <header class="header">
+
 
         <!--
             TEMPORARY LOGO
@@ -422,47 +466,45 @@
         -->
 
         <div
-            class="logo"
-            style="
-                margin-left:auto;
-                margin-right:auto;
-                display:flex;
-                align-items:center;
-                justify-content:center;
-                border-radius:50%;
-                background:#e9eef5;
-                color:#1d3557;
-                font-weight:bold;
-            "
+            class="logo-placeholder"
         >
             GOS
         </div>
 
 
         <h1 class="samaj-name">
+
             GANDHINAGAR ODIYA SAMAJ
+
         </h1>
 
 
         <div class="subtitle">
+
             Member Directory
+
         </div>
+
 
     </header>
 
 
 
-    <!-- ==========================================
-         MAIN
-    =========================================== -->
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
 
     <main class="container">
 
 
-        <!-- STATISTICS -->
+        <!-- =================================================
+             STATISTICS
+        ================================================== -->
 
         <section class="stats">
 
+
+            <!-- TOTAL MEMBERS -->
 
             <div class="stat-card">
 
@@ -470,15 +512,21 @@
                     class="stat-number"
                     id="memberCount"
                 >
-                    47
+                    0
                 </div>
 
+
                 <div class="stat-label">
+
                     Total Members
+
                 </div>
 
             </div>
 
+
+
+            <!-- PDF PARTS -->
 
             <div class="stat-card">
 
@@ -486,15 +534,21 @@
                     class="stat-number"
                     id="partCount"
                 >
-                    10
+                    0
                 </div>
 
+
                 <div class="stat-label">
+
                     PDF Parts
+
                 </div>
 
             </div>
 
+
+
+            <!-- STATUS -->
 
             <div class="stat-card">
 
@@ -502,11 +556,14 @@
                     class="stat-number"
                     id="statusNumber"
                 >
-                    Ready
+                    Connecting...
                 </div>
 
+
                 <div class="stat-label">
+
                     System Status
+
                 </div>
 
             </div>
@@ -516,19 +573,26 @@
 
 
 
-        <!-- GENERATE -->
+        <!-- =================================================
+             GENERATE SECTION
+        ================================================== -->
 
         <section class="generate-card">
 
+
             <h2>
+
                 Member Directory
+
             </h2>
 
 
             <p>
+
                 Generate the latest member directory
                 PDFs from the Gandhinagar Odiya Samaj
                 member database.
+
             </p>
 
 
@@ -537,7 +601,9 @@
                 id="generateButton"
                 onclick="generateDirectory()"
             >
+
                 Generate Member Directory
+
             </button>
 
 
@@ -545,19 +611,27 @@
                 class="status"
                 id="status"
             >
-                Ready to generate.
+
+                Connecting to GOS Member Database...
+
             </div>
+
 
         </section>
 
 
 
-        <!-- PDF LIST -->
+        <!-- =================================================
+             PDF SECTION
+        ================================================== -->
 
         <section class="pdf-section">
 
+
             <h2>
+
                 Generated PDFs
+
             </h2>
 
 
@@ -566,24 +640,22 @@
                 id="pdfList"
             >
 
-                <!--
-                    PDF files will be loaded here
-                    from Google Apps Script later.
-                -->
-
-
                 <div class="pdf-item">
 
                     <div>
 
                         <div class="pdf-name">
+
                             PDF files will appear here
+
                         </div>
 
+
                         <div class="pdf-info">
-                            The Google Apps Script
-                            connection will be added
-                            in the next step.
+
+                            Generated PDF files will be
+                            displayed here.
+
                         </div>
 
                     </div>
@@ -592,6 +664,7 @@
 
             </div>
 
+
         </section>
 
 
@@ -599,9 +672,9 @@
 
 
 
-    <!-- ==========================================
+    <!-- =====================================================
          FOOTER
-    =========================================== -->
+    ====================================================== -->
 
     <footer>
 
@@ -611,13 +684,160 @@
 
 
 
-    <!-- ==========================================
+    <!-- =====================================================
          JAVASCRIPT
-    =========================================== -->
+    ====================================================== -->
 
     <script>
 
+
+        /* =====================================================
+           GOOGLE APPS SCRIPT WEB APP URL
+        ===================================================== */
+
+        const API_URL =
+            'https://script.google.com/macros/s/AKfycbxfBTSYv8eqycerwFCn0m7GQ02fqzHx0CPg8iri8SCTzaqOxNjmX83aZCgf4Czn1Fxt/exec';
+
+
+
+        /* =====================================================
+           LOAD LIVE DIRECTORY STATUS
+        ===================================================== */
+
+        async function loadDirectoryStatus() {
+
+
+            const status =
+                document.getElementById(
+                    'status'
+                );
+
+
+            try {
+
+
+                status.textContent =
+                    'Connecting to GOS Member Database...';
+
+
+
+                const response =
+                    await fetch(
+                        API_URL +
+                        '?action=status'
+                    );
+
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        'Unable to connect to Google Apps Script.'
+                    );
+
+                }
+
+
+
+                const data =
+                    await response.json();
+
+
+
+                if (!data.success) {
+
+                    throw new Error(
+                        data.error ||
+                        'Unknown API error.'
+                    );
+
+                }
+
+
+
+                /* ---------------------------------------------
+                   UPDATE MEMBER COUNT
+                --------------------------------------------- */
+
+                document.getElementById(
+                    'memberCount'
+                ).textContent =
+                    data.memberCount;
+
+
+
+                /* ---------------------------------------------
+                   UPDATE PDF PART COUNT
+                --------------------------------------------- */
+
+                document.getElementById(
+                    'partCount'
+                ).textContent =
+                    data.partCount;
+
+
+
+                /* ---------------------------------------------
+                   UPDATE SYSTEM STATUS
+                --------------------------------------------- */
+
+                document.getElementById(
+                    'statusNumber'
+                ).textContent =
+                    'Ready';
+
+
+
+                status.textContent =
+
+                    'Connected successfully. ' +
+
+                    data.memberCount +
+
+                    ' members found. ' +
+
+                    data.partCount +
+
+                    ' PDF parts required.';
+
+
+            }
+
+            catch (error) {
+
+
+                console.error(
+                    error
+                );
+
+
+                status.textContent =
+
+                    'Unable to connect to the GOS database.';
+
+
+
+                document.getElementById(
+                    'statusNumber'
+                ).textContent =
+                    'Offline';
+
+            }
+
+        }
+
+
+
+        /* =====================================================
+           GENERATE DIRECTORY
+           
+           IMPORTANT:
+           This button is NOT connected to the PDF generator
+           yet. We will do that in a later step.
+        ===================================================== */
+
         function generateDirectory() {
+
 
             const button =
                 document.getElementById(
@@ -631,26 +851,24 @@
                 );
 
 
-            button.disabled = true;
+            button.disabled =
+                true;
 
 
             button.textContent =
-                'Starting...';
+                'Preparing...';
+
 
 
             status.textContent =
-                'The PDF generation system will be connected in the next step.';
 
+                'The PDF generation button will be connected to the existing GOS PDF generator in the next step.';
 
-            /*
-             * We will connect this button to
-             * your Google Apps Script backend
-             * later.
-             */
 
 
             setTimeout(
                 function() {
+
 
                     button.disabled =
                         false;
@@ -661,13 +879,27 @@
 
 
                     status.textContent =
-                        'Webpage is ready. Backend connection pending.';
+
+                        'Website is connected to the database. PDF generation connection is the next step.';
+
 
                 },
                 1500
             );
 
         }
+
+
+
+        /* =====================================================
+           LOAD DATA WHEN PAGE OPENS
+        ===================================================== */
+
+        window.addEventListener(
+            'DOMContentLoaded',
+            loadDirectoryStatus
+        );
+
 
     </script>
 
