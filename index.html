@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        Gandhinagar Odiya Samaj - Member Directory
+    </title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family:
+                Arial,
+                Helvetica,
+                sans-serif;
+
+            background:
+                #f5f7fa;
+
+            color: #222;
+        }
+
+
+        /* ==============================
+           HEADER
+        ============================== */
+
+        .header {
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #f0f4f8
+                );
+
+            padding: 35px 20px;
+
+            text-align: center;
+
+            border-bottom:
+                1px solid #ddd;
+        }
+
+
+        .logo {
+            width: 110px;
+            height: 110px;
+
+            object-fit: contain;
+
+            margin-bottom: 12px;
+        }
+
+
+        .samaj-name {
+            margin: 0;
+
+            font-size: 32px;
+
+            font-weight: 800;
+
+            letter-spacing: 1px;
+
+            color: #1d3557;
+        }
+
+
+        .subtitle {
+            margin-top: 8px;
+
+            font-size: 17px;
+
+            color: #666;
+        }
+
+
+        /* ==============================
+           MAIN CONTAINER
+        ============================== */
+
+        .container {
+            max-width: 1100px;
+
+            margin: 35px auto;
+
+            padding: 0 20px;
+        }
+
+
+        /* ==============================
+           STAT CARDS
+        ============================== */
+
+        .stats {
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    3,
+                    1fr
+                );
+
+            gap: 20px;
+
+            margin-bottom: 30px;
+        }
+
+
+        .stat-card {
+            background: white;
+
+            border-radius: 12px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            box-shadow:
+                0 3px 12px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.08
+                );
+        }
+
+
+        .stat-number {
+            font-size: 34px;
+
+            font-weight: 700;
+
+            color: #1d3557;
+        }
+
+
+        .stat-label {
+            margin-top: 7px;
+
+            color: #777;
+
+            font-size: 14px;
+        }
+
+
+        /* ==============================
+           GENERATE SECTION
+        ============================== */
+
+        .generate-card {
+            background: white;
+
+            border-radius: 12px;
+
+            padding: 30px;
+
+            text-align: center;
+
+            box-shadow:
+                0 3px 12px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.08
+                );
+
+            margin-bottom: 30px;
+        }
+
+
+        .generate-card h2 {
+            margin-top: 0;
+
+            color: #1d3557;
+        }
+
+
+        .generate-card p {
+            color: #666;
+        }
+
+
+        .generate-button {
+            border: none;
+
+            border-radius: 8px;
+
+            padding:
+                14px 30px;
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+            cursor: pointer;
+
+            background:
+                #1d3557;
+
+            color: white;
+
+            transition:
+                0.2s;
+        }
+
+
+        .generate-button:hover {
+            background:
+                #274c77;
+
+            transform:
+                translateY(-1px);
+        }
+
+
+        .generate-button:disabled {
+            background:
+                #999;
+
+            cursor:
+                not-allowed;
+
+            transform:
+                none;
+        }
+
+
+        /* ==============================
+           STATUS
+        ============================== */
+
+        .status {
+            margin-top: 20px;
+
+            padding: 14px;
+
+            border-radius: 8px;
+
+            background:
+                #f1f5f9;
+
+            color: #555;
+
+            font-size: 14px;
+        }
+
+
+        /* ==============================
+           PDF SECTION
+        ============================== */
+
+        .pdf-section {
+            background: white;
+
+            border-radius: 12px;
+
+            padding: 30px;
+
+            box-shadow:
+                0 3px 12px
+                rgba(
+                    0,
+                    0,
+                    0,
+                    0.08
+                );
+        }
+
+
+        .pdf-section h2 {
+            margin-top: 0;
+
+            color: #1d3557;
+        }
+
+
+        .pdf-list {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+
+        .pdf-item {
+            display: flex;
+
+            justify-content:
+                space-between;
+
+            align-items: center;
+
+            padding: 16px;
+
+            border:
+                1px solid #e1e5ea;
+
+            border-radius: 8px;
+
+            background:
+                #fafbfc;
+        }
+
+
+        .pdf-name {
+            font-weight: 600;
+        }
+
+
+        .pdf-info {
+            font-size: 13px;
+
+            color: #777;
+
+            margin-top: 4px;
+        }
+
+
+        .download-button {
+            text-decoration: none;
+
+            background:
+                #457b9d;
+
+            color: white;
+
+            padding:
+                9px 18px;
+
+            border-radius: 6px;
+
+            font-size: 14px;
+
+            font-weight: 600;
+        }
+
+
+        .download-button:hover {
+            background:
+                #35627d;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            text-align: center;
+
+            padding: 30px 20px;
+
+            color: #777;
+
+            font-size: 13px;
+        }
+
+
+        /* ==============================
+           MOBILE
+        ============================== */
+
+        @media (
+            max-width: 700px
+        ) {
+
+            .stats {
+                grid-template-columns:
+                    1fr;
+            }
+
+
+            .samaj-name {
+                font-size: 24px;
+            }
+
+
+            .pdf-item {
+                flex-direction:
+                    column;
+
+                align-items:
+                    flex-start;
+
+                gap: 12px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         HEADER
+    =========================================== -->
+
+    <header class="header">
+
+        <!--
+            TEMPORARY LOGO
+
+            We will replace this with the actual
+            Gandhinagar Odiya Samaj logo later.
+        -->
+
+        <div
+            class="logo"
+            style="
+                margin-left:auto;
+                margin-right:auto;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+                border-radius:50%;
+                background:#e9eef5;
+                color:#1d3557;
+                font-weight:bold;
+            "
+        >
+            GOS
+        </div>
+
+
+        <h1 class="samaj-name">
+            GANDHINAGAR ODIYA SAMAJ
+        </h1>
+
+
+        <div class="subtitle">
+            Member Directory
+        </div>
+
+    </header>
+
+
+
+    <!-- ==========================================
+         MAIN
+    =========================================== -->
+
+    <main class="container">
+
+
+        <!-- STATISTICS -->
+
+        <section class="stats">
+
+
+            <div class="stat-card">
+
+                <div
+                    class="stat-number"
+                    id="memberCount"
+                >
+                    47
+                </div>
+
+                <div class="stat-label">
+                    Total Members
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div
+                    class="stat-number"
+                    id="partCount"
+                >
+                    10
+                </div>
+
+                <div class="stat-label">
+                    PDF Parts
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div
+                    class="stat-number"
+                    id="statusNumber"
+                >
+                    Ready
+                </div>
+
+                <div class="stat-label">
+                    System Status
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- GENERATE -->
+
+        <section class="generate-card">
+
+            <h2>
+                Member Directory
+            </h2>
+
+
+            <p>
+                Generate the latest member directory
+                PDFs from the Gandhinagar Odiya Samaj
+                member database.
+            </p>
+
+
+            <button
+                class="generate-button"
+                id="generateButton"
+                onclick="generateDirectory()"
+            >
+                Generate Member Directory
+            </button>
+
+
+            <div
+                class="status"
+                id="status"
+            >
+                Ready to generate.
+            </div>
+
+        </section>
+
+
+
+        <!-- PDF LIST -->
+
+        <section class="pdf-section">
+
+            <h2>
+                Generated PDFs
+            </h2>
+
+
+            <div
+                class="pdf-list"
+                id="pdfList"
+            >
+
+                <!--
+                    PDF files will be loaded here
+                    from Google Apps Script later.
+                -->
+
+
+                <div class="pdf-item">
+
+                    <div>
+
+                        <div class="pdf-name">
+                            PDF files will appear here
+                        </div>
+
+                        <div class="pdf-info">
+                            The Google Apps Script
+                            connection will be added
+                            in the next step.
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ==========================================
+         FOOTER
+    =========================================== -->
+
+    <footer>
+
+        © Gandhinagar Odiya Samaj
+
+    </footer>
+
+
+
+    <!-- ==========================================
+         JAVASCRIPT
+    =========================================== -->
+
+    <script>
+
+        function generateDirectory() {
+
+            const button =
+                document.getElementById(
+                    'generateButton'
+                );
+
+
+            const status =
+                document.getElementById(
+                    'status'
+                );
+
+
+            button.disabled = true;
+
+
+            button.textContent =
+                'Starting...';
+
+
+            status.textContent =
+                'The PDF generation system will be connected in the next step.';
+
+
+            /*
+             * We will connect this button to
+             * your Google Apps Script backend
+             * later.
+             */
+
+
+            setTimeout(
+                function() {
+
+                    button.disabled =
+                        false;
+
+
+                    button.textContent =
+                        'Generate Member Directory';
+
+
+                    status.textContent =
+                        'Webpage is ready. Backend connection pending.';
+
+                },
+                1500
+            );
+
+        }
+
+    </script>
+
+
+</body>
+
+</html>
